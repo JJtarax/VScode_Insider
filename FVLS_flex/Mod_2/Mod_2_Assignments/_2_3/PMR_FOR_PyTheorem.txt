@@ -1,0 +1,11 @@
+Project Title: PyTheorem.java
+Purpose of Project: To calucate the hypostnouse of a triangle
+Version/Date: 7/6/2023
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I that there are funtions that are already built for math
+
+<-s>: I had a hard time finding square root
+--------------
+In the future: I will be able to use funtions to make math and other stuff that there are funtions for easily

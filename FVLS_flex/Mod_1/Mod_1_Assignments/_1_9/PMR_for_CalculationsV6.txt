@@ -1,0 +1,12 @@
+Project Title: 01.09 Primitive Data Type: doubles / CalculationsV6.java
+Purpose of Project: To do math
+Version/Date: 6-25-2023
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: Learned the difference between Hard-coding something and not hard coding something. 
+Before i had a bit of problem understanding what the difference is between hard coding somehting and not coding somehting
+
+<-s>: The negtive that i have for this is that i don't have a negtive
+--------------
+In the future: I will know what people mean when they talk about hard coding or not hard coding something

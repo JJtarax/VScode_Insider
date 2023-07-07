@@ -1,0 +1,11 @@
+Project Title: 01.0 Student Contact Card / StudentsInfoCard.java
+Purpose of Project: To introduce myself
+Version/Date: 6/25/2023
+Authir: Tejas Upadhyay
+----
+PMR:
+<+s>: I have learned that there are 2 types of print command "System.out.print" and "System.out.println" which almost do the samething but the println one makes a new line for the next print to print in
+
+<-s>: I had some trouble with packages because i put it in a folder and it wouldn't want to work then i looked it up and found the answer
+--------------
+In the future: Make better PMRs

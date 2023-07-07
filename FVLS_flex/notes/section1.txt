@@ -1,0 +1,22 @@
+Mod 1:
+	01.04 : StudentsInfoCard.java
+		In this java file you are to introduce your self (you learn about print and println)
+
+	01.09 : CalculationsV6.java
+		In this java file you are to make a calulator in java that can do addtion, subtraction, multiplication, division, modulus
+
+	01.12 : GradesV2.java
+		In this java file you are to make a program that finds the average of all the grades that a student gets (you learn casting here)
+
+	01.13 : CurrencyV1.java
+		In this java file you are to make a program where you can convert USD into Yen, Pesos, or Euros for a trip (You do irl math here)
+
+Mod 2:
+	02.03 : PyTheorem.java
+		In this java file you are to make a program where when you insert the vaules of the 2 sides of a triagnle /not the hypotunse\ 
+
+	02.09 : MakingMethodCalls.java
+		In this java file you learn how to use Methods 
+
+	02.10 : Online_Purchase.java
+		_

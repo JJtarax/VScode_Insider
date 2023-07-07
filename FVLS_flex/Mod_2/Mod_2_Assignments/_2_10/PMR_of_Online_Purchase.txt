@@ -1,0 +1,11 @@
+Project Title: Online_Purchase.java
+Purpose of Project: To give you a repict of a movie
+Version/Date: 07/06/2023
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: Got to do some SubStrings
+
+<-s>: Took me a while till i reread the lessons to understad how to use a substring
+--------------
+In the future: Don't forget what the lessons say (took a some days off because we went out and didn't reread what the lesson had said so i forgot what was there)

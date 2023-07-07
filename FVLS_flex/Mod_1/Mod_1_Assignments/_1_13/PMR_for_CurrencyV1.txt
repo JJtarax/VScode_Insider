@@ -1,0 +1,13 @@
+Project Title: CurrencyV1.java
+Purpose of Project: Convert USD into either Peso, Yen, or Euro. It also displays the rate and the amount that has been spent in each country.
+Version/Date: 6/29/2023
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: What I have gained is what style that i like to use when programming.
+The style that i prefer is the one that was used in the souvenir purchases section where all the code that was used for souvenir #1 was grouped to together 
+unlike in the Conversion section of the program. In the Conversion section of the program they grouped it by functionality.
+
+<-s>: I had a logic error where the dollarsAfter(country name) would be a negative. I fixed it by reducing the values of the money spent in each country.
+--------------
+In the future: Use the format that was used in the souvenir section of the program to help avoid future logic errors. 

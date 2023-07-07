@@ -1,0 +1,12 @@
+Project Title: GradesV2.java
+Purpose of Project: To show the Average Score of a test
+Version/Date: 6/29/2023
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: It was easy to do eveything else other then finding the average.
+I also learned casting.
+
+<-s>: I had trouble finding the equaltion to find the Average Scores of the test but in the end I found the equaltion
+--------------
+In the future: I will be able to cast to different data types.
