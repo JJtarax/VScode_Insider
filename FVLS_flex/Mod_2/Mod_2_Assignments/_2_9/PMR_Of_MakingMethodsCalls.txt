@@ -4,8 +4,8 @@ Version/Date: 7-7-2023
 Author: Tejas Upadhyay
 ----
 PMR:
-<+s>: 
+<+s>: Learned about methods
 
-<-s>: 
+<-s>: I still don't get methods
 --------------
-In the future: 
+In the future: Use methods more so then i can understand it
