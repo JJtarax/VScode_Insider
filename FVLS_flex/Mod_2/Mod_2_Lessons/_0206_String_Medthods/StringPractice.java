@@ -1,4 +1,3 @@
-
 /**
  * The purpose of this program is to demonstrate the use of several 
  * methods of the String class.

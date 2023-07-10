@@ -1,4 +1,4 @@
-package FVLS_flex.Mod_2.Mod_2_Assignments._2_3;
+package FVLS_flex.Mod_2.Mod_2_Assignments._2_3.V1;
 
 public class PyTheorem {
     public static void main(String[] args) {

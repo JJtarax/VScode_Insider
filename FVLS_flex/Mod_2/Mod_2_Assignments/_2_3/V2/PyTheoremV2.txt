@@ -1,0 +1,24 @@
+package FVLS_flex.Mod_2.Mod_2_Assignments._2_3.V2;
+
+public class PyTheoremV2 {
+    public static void main(String[] args) {
+
+        // Triangle 1
+        double x = 20; // Value of side A/x
+        double sideA = Math.pow(x, 2); // x^2
+        double y = 13; // Value of B/y
+        double sideB = Math.pow(y, 2); // y^2
+        double p = sideA + sideA; // Added (x^2)+(y^2)
+        double h = Math.sqrt(p); // √p = √(x^2)+(y^2)
+        System.out.println("Triangle 1 \tSide 1 : "+ x +" \tSide 2 :" + y + "\tHypotenuse : " + h); // output
+
+        // Triangle 2
+        x = 9; // Value of side A/x
+        sideA = Math.pow(x, 2); // x^2
+        y = 15; // Value of B/y
+        sideB = Math.pow(y, 2); // y^2
+        p = sideA + sideB; // Added (x^2)+(y^2)
+        h = Math.sqrt(p); // √p = √(x^2)+(y^2)
+        System.out.println("Triangle 2 \tSide 1 : "+ x +" \tSide 2 :" + y + "\tHypotenuse : " + h); // output
+    }
+}

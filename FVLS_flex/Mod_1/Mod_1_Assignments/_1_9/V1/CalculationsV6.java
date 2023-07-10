@@ -3,7 +3,7 @@
  * @author Tejas Upadhyay
  * @ made: 6/262023
 */
-package FVLS_flex.Mod_1.Mod_1_Assignments._1_9;
+package FVLS_flex.Mod_1.Mod_1_Assignments._1_9.V1;
 
 public class CalculationsV6 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package FVLS_flex.Mod_2.Mod_2_Assignments._2_10;
+package FVLS_flex.Mod_2.Mod_2_Assignments._2_10.V2;
 
 import java.util.Scanner;
 
@@ -28,11 +28,8 @@ class MoiveTickets {
         Double perTicketPrice = in.nextDouble();
         in.nextLine();
 
-        System.out.print("Enter Your debit card number (##########): ");
+        System.out.print("Enter Your debit card number (####-####-####-####): ");
         String debitCard = in.nextLine();
-        String newDebitCard = debitCard.substring(0,4)
-        + "-" + debitCard.substring(4,7)
-        + "-" + debitCard.substring(7);
 
         System.out.print("Enter your pin (#####): ");
         String pin = in.nextLine();
@@ -49,7 +46,7 @@ class MoiveTickets {
         System.out.println("Order number: ra007\n");
 
         System.out.println("\t" + name);
-        System.out.println("\tAccount: " + newDebitCard);
+        System.out.println("\tAccount: " + debitCard);
         System.out.println("\tMovies: " + movie);
         System.out.println("\tNumber of tickets: " + tickets);
         System.out.println("\tPrice of each Ticket: " + perTicketPrice + "\n");
