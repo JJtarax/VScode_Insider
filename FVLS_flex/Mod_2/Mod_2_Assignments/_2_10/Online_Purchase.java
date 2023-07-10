@@ -26,6 +26,7 @@ class MoiveTickets {
 
         System.out.print("What is the price of each ticket? ");
         Double perTicketPrice = in.nextDouble();
+        in.nextLine();
 
         System.out.print("Enter Your debit card number (##########): ");
         String debitCard = in.nextLine();
