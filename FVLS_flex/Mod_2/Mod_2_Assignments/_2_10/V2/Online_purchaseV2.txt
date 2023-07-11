@@ -1,3 +1,9 @@
+/**
+ * The purpose of the program to make a repeict
+ * 
+ * @ Author: Tejas Upadhyay
+ * @ Made 7/11/2023
+*/
 package FVLS_flex.Mod_2.Mod_2_Assignments._2_10.V2;
 
 import java.util.Scanner;

@@ -1,3 +1,9 @@
+/**
+ * The purpose of the program to learn about methods
+ * 
+ * @ Author: Tejas Upadhyay
+ * @ Made 7/11/2023
+*/
 package FVLS_flex.Mod_2.Mod_2_Assignments._2_9;
 /**
  * Without modifying any of the method signatures, correct add method calls to the already created methods in the main() below 
@@ -34,4 +40,3 @@ public class MakingMethodCalls {
         System.out.println("Ten divided by five equals " + result);
     }
 }
-
