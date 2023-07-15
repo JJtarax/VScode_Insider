@@ -31,15 +31,15 @@ class BMI {
         //height
         System.out.println("Height: "+h);
         //BMI
-        int BMI = (int) ((w/(h*h))*703);
+        int BMI = (int) (w/(h*h));
         System.out.println(BMI);
         //If or if not overweight
         if (BMI<=18.5) {
             System.out.println("You are under weight");
         }
-       // else if (BMI>18.5; BMI<24.9;){
-       //     System.out.println("You are normal");
-       // }
+        else if (BMI>24.9){
+            System.out.println("You are normal");
+        }
 
 
         in.close();
