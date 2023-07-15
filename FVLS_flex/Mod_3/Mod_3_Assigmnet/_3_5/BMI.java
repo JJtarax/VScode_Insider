@@ -5,7 +5,7 @@
 >29.9 obese
 */
 
-package FVLS_flex.Mod_3.Mod_3_Assigmnet._0303;
+package FVLS_flex.Mod_3.Mod_3_Assigmnet._3_5;
 
 import java.util.Scanner;
 
