@@ -20,7 +20,7 @@ class BMI {
         double wp = in.nextDouble();
         double w = wp*0.45359237;
 
-        System.out.println("What is your height(Feet and Inches (but space between the feet and the inches))? ");
+        System.out.println("What is your height(Feet and Inches (put space between the feet and the inches))? ");
         float hf = in.nextInt();
         float hi = in.nextFloat();
         double h = ((hf*12)+hi)*0.0254;
