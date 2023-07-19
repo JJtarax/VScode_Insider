@@ -10,4 +10,8 @@ PMR:
 --------------
 In the future: 
 
+<<<<<<< HEAD
 https://prod.liveshare.vsengsaas.visualstudio.com/join?49E25CB1146321E9240D65CDF1315EE6C003
+=======
+https://prod.liveshare.vsengsaas.visualstudio.com/join?49E25CB1146321E9240D65CDF1315EE6C003
+>>>>>>> 471f0b8f51e4ee2fe50da17113e09f8bf93c2a04
