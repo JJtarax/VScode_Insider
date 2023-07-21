@@ -1,0 +1,12 @@
+Project Title: BMII.java
+Purpose of Project: To tell the user there BMI
+Version/Date: 
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: 
+
+<-s>:   I tried to put the varables in the If loop and it didn't work so I defined the varables outside then used them inside
+        
+--------------
+In the future: 

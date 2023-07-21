@@ -29,5 +29,7 @@ public class GPAV1
 
         System.out.println("GPA: " + average);
         System.out.println("Eligible: " + isEligible);
+
+        in.close();
     }
 }

@@ -8,7 +8,7 @@ package FVLS_flex.Mod_2.Mod_2_Assignments._2_10.V2;
 
 import java.util.Scanner;
 
-class MoiveTickets {
+public class Online_PurchaseV2 {
     public static void main(String[] args) {
         System.out.println();
         
@@ -19,10 +19,17 @@ class MoiveTickets {
 
         System.out.print("Please enter your first and last name: ");
         String name = in.nextLine();
+        char firstNameInitial = name.charAt(0);
+        String lastName = name.substring(name.indexOf(" "), name.length());
 
 
         System.out.print("Enter today's date (mm/dd/yyyy): ");
         String date = in.nextLine();
+        String dayYearDate = date.substring(date.indexOf("/")+1, date.length());
+        String newDate = date.substring(0, date.indexOf("/"))
+        + "-" + dayYearDate.substring(0,dayYearDate.indexOf("/"))
+        + "-" + dayYearDate.substring(dayYearDate.indexOf("/")+1, dayYearDate.length())
+        ;
 
         System.out.print("What movie would you like to see? ");
         String movie = in.nextLine();
@@ -36,8 +43,13 @@ class MoiveTickets {
 
         System.out.print("Enter Your debit card number (####-####-####-####): ");
         String debitCard = in.nextLine();
+        String formattedDebitNum = debitCard.substring(0, 4)
+        + "-" + debitCard.substring(4,8)
+        + "-" + debitCard.substring(8,12)
+        + "-" + debitCard.substring(12)
+        ;
 
-        System.out.print("Enter your pin (#####): ");
+        System.out.print("Enter your pin (####): ");
         String pin = in.nextLine();
 
         System.out.println("""
@@ -48,11 +60,11 @@ class MoiveTickets {
 
         System.out.println("Your e-Receipt:\n");
 
-        System.out.println(date);
+        System.out.println(newDate);
         System.out.println("Order number: ra007\n");
 
-        System.out.println("\t" + name);
-        System.out.println("\tAccount: " + debitCard);
+        System.out.println("\t" + firstNameInitial + ". " +lastName);
+        System.out.println("\tAccount: " + formattedDebitNum);
         System.out.println("\tMovies: " + movie);
         System.out.println("\tNumber of tickets: " + tickets);
         System.out.println("\tPrice of each Ticket: " + perTicketPrice + "\n");

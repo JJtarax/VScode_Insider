@@ -1,0 +1,11 @@
+Project Title: PyTheorem.java
+Purpose of Project: To calucate the hypostnouse of a triangle
+Version/Date: 7-19-2023
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I learned that there are funtions that are already built for math
+
+<-s>: Had a bit of trouble to get the random to be between 5-23
+--------------
+In the future: I will be able to use funtions to make math and other stuff that there are funtions for easily

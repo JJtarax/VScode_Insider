@@ -7,11 +7,11 @@ public class Calc
 
         int value = 10;
         //Caluation and output statements
-        int dividsor = 2;
+        int divisor = 2;
 
         System.out.println("The orginal value is " + value);
-        System.out.println("when "+value+" is divided by "+dividsor+", the whole number result is "+value/dividsor);
-        System.out.println("The remainder of "+value+" divided by "+dividsor+" is "+value%dividsor);
-        System.out.println("When "+value+" is divided by "+dividsor+", the decimcal result is "+(double)value/dividsor);
+        System.out.println("when "+value+" is divided by "+divisor+", the whole number result is "+value/divisor);
+        System.out.println("The remainder of "+value+" divided by "+divisor+" is "+value%divisor);
+        System.out.println("When "+value+" is divided by "+divisor+", the decimcal result is "+(double)value/divisor);
     }
 }

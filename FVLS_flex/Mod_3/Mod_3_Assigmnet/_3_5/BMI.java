@@ -1,8 +1,7 @@
 /* 
-<18.5 underweight
-18.5 - 24.9 normal
-25.5 - 29.9 Overweight
->29.9 obese
+Author: Tejas Upahdyay
+Verison/date: 7-19-2023
+Pupose: Tell user there BMI
 */
 
 package FVLS_flex.Mod_3.Mod_3_Assigmnet._3_5;

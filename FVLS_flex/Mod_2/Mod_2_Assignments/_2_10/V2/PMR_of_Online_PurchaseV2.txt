@@ -1,0 +1,11 @@
+Project Title: Online_Purchase.java
+Purpose of Project: To give you a repict of a movie
+Version/Date: 07-11-2023
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: Got some experince with Scanners
+
+<-s>: There was a runtime error so I had to get rid of the substrings. When I asked the user for input and they put less then 16 it would cause the error.
+--------------
+In the future: I will be able to use scanners and i need to learn about substrings to see if i can avoid the tim error
