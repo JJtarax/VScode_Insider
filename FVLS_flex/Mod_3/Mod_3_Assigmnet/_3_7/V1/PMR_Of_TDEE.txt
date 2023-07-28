@@ -1,0 +1,11 @@
+Project Title: TDEE.java
+Purpose of Project: Tell you your TDEE
+Version/Date: 7/17/20023
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: 	Learned that you can use a if/else statment within a if/else statment
+
+<-s>: 	It took me awhile to figure out that you can't define a varable within a if statment
+--------------
+In the future: I will know to define a varble outside of the if/else statements and be able to make if/else staements within if/else staeement

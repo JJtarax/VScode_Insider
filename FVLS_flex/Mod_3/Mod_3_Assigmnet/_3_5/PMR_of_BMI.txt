@@ -1,10 +1,10 @@
 Project Title: BMII.java
 Purpose of Project: To tell the user there BMI
-Version/Date: 
+Version/Date: 7/19/2023
 Author: Tejas Upadhyay
 ----
 PMR:
-<+s>: 
+<+s>: 	Got to do Casting and if/else statements
 
 <-s>:   I tried to put the varables in the If loop and it didn't work so I defined the varables outside then used them inside
         

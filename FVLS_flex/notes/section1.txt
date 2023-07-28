@@ -1,22 +1,58 @@
 Mod 1:
-	01.04 : StudentsInfoCard.java
+	01.04 (Assignment) : StudentsInfoCard.java
 		In this java file you are to introduce your self (you learn about print and println)
 
-	01.09 : CalculationsV6.java
+	01.09 (Assignment) : CalculationsV6.java
 		In this java file you are to make a calulator in java that can do addtion, subtraction, multiplication, division, modulus
 
-	01.12 : GradesV2.java
+	01.12 (Assignment) : GradesV2.java
 		In this java file you are to make a program that finds the average of all the grades that a student gets (you learn casting here)
 
-	01.13 : CurrencyV1.java
+	01.13 (Assignment) : CurrencyV1.java
 		In this java file you are to make a program where you can convert USD into Yen, Pesos, or Euros for a trip (You do irl math here)
 
 Mod 2:
-	02.03 : PyTheorem.java
+	02.03 (Assignment) : PyTheorem.java
 		In this java file you are to make a program where when you insert the vaules of the 2 sides of a triagnle /not the hypotunse\ 
 
-	02.09 : MakingMethodCalls.java
+	02.09 (Assignment) : MakingMethodCalls.java
 		In this java file you learn how to use Methods 
 
-	02.10 : Online_Purchase.java
+	02.10 (Assignment) : Online_Purchase.java
 		_
+
+Mod 3:
+	03.01 (Quiz): 
+		You Learn Binary (Decimal, Binary, Hexadecimal, Octal)
+			Binary to Decimal : 
+				Forumla :  (_*2^7)+(_*2^6)+(_*2^5)+(_*2^4)+(_*2^3)+(_*2^2)+(_*2^1)+(_*2^0)\
+					EX : 00110010 = (0*2^7)+(0*2^6)+(1*2^5)+(1*2^4)+(0*2^3)+(0*2^2)+(1*2^1)+(0*2^0)
+								  = (0*128)+(0*64)+(1*32)+(1*16)+(0*8)+(0*4)+(1*2)+(0*1)
+								  = 0 + 0 + 32 + 16 + 0 + 0 + 2 + 0
+								  = 50
+			Decimal to Binary : 
+				Forumla : D/2ⁿ = _r
+						  r/2ⁿ = _r
+						  (go down till you get to 2⁰)
+					EX: 56/32 = 1 remainder 24
+						24/16 = 1 remainder 8
+						8/8 = 1 remainder 0
+						0/4 = 0 remainder 0
+						0/2 = 0 remainder 0
+						0/1 = 0
+						your Binary number is 111000
+			Hexadecimal to Decimal : 
+				Forumla : 9C3A= (_*16^3) + (_*16^2) + (_*16^1) + (_*16^0)
+					EX : CDEA0 = (C*16^4) + (D *16^3) + (E*16^2) + (A*16^1) + (0*16^0)
+							   = (12*16^4) + (13*16^3) + (14*16^2) + (10*16^1) + (0*16^0)
+							   = (12*65536) + (13*4096) + (14*256) + (10*16) + (0*1)
+							   = 786432 + 53248 + 3584 + 160 + 0
+							    = 843424
+			Decimal to Hexadecimal : 
+				Forumla : D/16ⁿ = _r
+						  r/16ⁿ = _r
+						  (Go down untill you get 16ⁿ)
+					EX : 24256/4096 = 5 rem 3776
+						 2776/256 = 14 rem 192
+						 192/16 = 12 rem 0
+						 0/1 = 0 remainder 0

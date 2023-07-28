@@ -7,10 +7,9 @@ public class tester {
 
 	System.out.println("Hello");
 
-    String word1 = "jumping";
-String word2 = "jack";
-    int x = word1.compareTo(word2);
-    System.out.println(x);
+    String genderString = in.next();
+    String ageString = in.next();
+    String heightInchesString = in.next();
 
     in.close();
     }
