@@ -1,86 +1,82 @@
-package FVLS_flex.Mod_4.Mod_4_Assigment._4_7;
-
-/**
- * 
- * @author FLVS AP CSA team
- * @version 2021
- * 
- * This Math trick and many more can be found at: http://www.pleacher.com/handley/puzzles/mtricks.html
- *
- */
-
- public class MathTrick {
-	
-	/**
-	 * 
-	 ******  DO NOT USE ARRAYS OR CONVERT NUMBERS TO STRING UNTIL STEP 7 ******
-	 *
-	 */
-	
-	// Step 1) Creates a random 3 digit (100-999) number where the first and last digit differ by more than one
-	// Hint: Use Math.random() to create number in the correct range
-	// 		 use modulus to find the last digit and divide by 100 for the first digit.
-	//		 calculate the difference, which method can you use so it doesn't matter how the numbers are subtract?
-	// 		 while the difference of the digits is less than 2, create a new random number and try again
-
-	public static int getRandomNum() 
-	{	int num = 0;
-		int firstDigit = 0;
-		int lastDigit = 0;
-
-		// complete the method		
-
+public class MathTrick {
+	public static int getRandomNum() {
+		int num;
+		do {
+			num = (int) (Math.random() * 900) + 100; // Generates a random 3-digit number
+			int firstDigit = num / 100;
+			int lastDigit = num % 10;
+			int diff = Math.abs(firstDigit - lastDigit);
+			if (diff > 1) {
+				break;
+			}
+		} while (true);
 		return num;
 	}
 
-	// Step 2 & 4) reverse the digits of a number
-	// Hint: to reverse a number without converting it to a String:
-	//		create a new variable to store the reversed number
-	//		while the original number > 0
-	//		for each digit, multiply the new variable by 10 (to make room for the new digit) 
-	//		then add the last digit (remember modulus?) to the new variable
-	//		divide the original number by 10 to get rid of the last digit
-	//	Ex: 584--> (0 x 10) + 4 = 4 ; 58--> (4 x 10) + 8 = 48; 5-->(48 x 10) + 5 = 485
+	public static int reverseDigits(int num) {
+		int reversedNum = 0;
+		while (num > 0) {
+			int lastDigit = num % 10;
+			reversedNum = (reversedNum * 10) + lastDigit;
+			num /= 10;
+		}
+		return reversedNum;
+	}
 
-	public static int reverseDigits (int num) {
-	
-		// complete the method
+	public static String replaceLtr(String str) {
+		StringBuilder replacedStr = new StringBuilder();
+		for (char ch : str.toCharArray()) {
+			switch (ch) {
+				case '0':
+					replacedStr.append('o');
+					break;
+				case '1':
+					replacedStr.append('i');
+					break;
+				case '2':
+					replacedStr.append('z');
+					break;
+				// Add more cases for other digits
+				default:
+					replacedStr.append(ch);
+					break;
+			}
+		}
+		return replacedStr.toString();
 	}
-	
-	// Step 7) replace characters in a String according to the chart
-	// Hint: Loop through the String and "replace" the numbers with the corresponding letter
-	public static String replaceLtr(String str)
-	{
-		// complete the method		
-	}
-	
-	// Step 8) reverse the letters in a String
-	// Hint: start with an empty String variable 
-	//		 loop through the original word   
-	//		 add one letter at time to the new variable using concatenation and .substring()
+
 	public static String reverseString(String str) {
-		// complete the method
+		StringBuilder reversedStr = new StringBuilder();
+		for (int i = str.length() - 1; i >= 0; i--) {
+			reversedStr.append(str.charAt(i));
+		}
+		return reversedStr.toString();
 	}
-		
-	public static void main(String[] args) 
-	{
-//		1.	Generate a random 3-digit number so that the first and third digits differ by more than one.
 
-//		2.	Now reverse the digits to form a second number.
+	public static void main(String[] args) {
+		int num1 = getRandomNum();
+		System.out.println("Step 1: Random 3-digit number: " + num1);
 
-//		3.	Subtract the smaller number from the larger one.
+		int num2 = reverseDigits(num1);
+		System.out.println("Step 2: Reversed number: " + num2);
 
-//		4.	Now reverse the digits in the answer you got in step 3 and add it to that number.
+		int difference = Math.abs(num1 - num2);
+		System.out.println("Step 3: Difference: " + difference);
 
-//		5.	Multiply by one million.
+		int num3 = reverseDigits(difference);
+		System.out.println("Step 4: Reversed difference: " + num3);
 
-//		6.	Subtract 733,361,573.
+		long result = (long) num3 * 1000000L;
+		System.out.println("Step 5: Multiplied by one million: " + result);
 
-//		7.	Convert the number to a string in order to replace the numbers with letters.
-// 				Ex: String str = String.valueOf(myNumber);
-//			Then, replace each of the digits in your answer, with the letter it corresponds to using the table in the instructions.
+		long finalResult = result - 733361573L;
+		System.out.println("Step 6: Subtracted 733,361,573: " + finalResult);
 
-//		8.	Now reverse the letters in the string to read your message backward.
+		String strResult = String.valueOf(finalResult);
+		String replacedStr = replaceLtr(strResult);
+		System.out.println("Step 7: Replaced digits with letters: " + replacedStr);
 
-	} // end main
-} // end class
+		String reversedMessage = reverseString(replacedStr);
+		System.out.println("Step 8: Reversed message: " + reversedMessage);
+	}
+}
