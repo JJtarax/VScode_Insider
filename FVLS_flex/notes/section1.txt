@@ -56,3 +56,13 @@ Mod 3:
 						 2776/256 = 14 rem 192
 						 192/16 = 12 rem 0
 						 0/1 = 0 remainder 0
+						 5EC0
+	03.02 : 
+		You learn boolean
+			Boolean has 2 vaules true and flase (1 and 0 (on and off (open and close)))
+				EX : if(age <= 10)
+   						admissionFee = 4.50;
+					else
+						admissionFee = 6;
+
+					# If you give an age that is 10 or less then the admissionFee is 4.5 if your older then 10 then the admissionFee is $6

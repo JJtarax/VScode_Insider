@@ -20,7 +20,6 @@ public class TDEE_V2 {
 
         System.out.println("Please enter your gender (M/F): ");
         String Gen = in.next().toUpperCase();
-
         if (!Gen.equals("M") && !Gen.equals("F")){
             System.out.println("Please enter a valid gender");
             in.close();

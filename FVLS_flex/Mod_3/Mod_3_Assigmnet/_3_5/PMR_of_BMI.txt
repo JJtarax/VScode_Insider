@@ -9,4 +9,4 @@ PMR:
 <-s>:   I tried to put the varables in the If loop and it didn't work so I defined the varables outside then used them inside
         
 --------------
-In the future: 
+In the future: I will know how to use if and else statementsand i will know to define a varable outside instead of defining it inside a loop

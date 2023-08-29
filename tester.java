@@ -1,17 +1,8 @@
-import java.util.Scanner;
-
 public class tester {
     public static void main(String[] args) {
+        double avg = 15 + 20;
 
-    Scanner in = new Scanner(System.in);
-
-	System.out.println("Hello");
-
-    String genderString = in.next();
-    String ageString = in.next();
-    String heightInchesString = in.next();
-
-    in.close();
+        avg /= 2;
+        System.out.println(avg);
     }
-
 }

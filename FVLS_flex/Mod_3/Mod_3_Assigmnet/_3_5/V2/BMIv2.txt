@@ -1,0 +1,55 @@
+package FVLS_flex.Mod_3.Mod_3_Assigmnet._3_5.V2;
+
+/* 
+Author: Tejas Upahdyay
+Verison/date: 7-19-2023
+Pupose: Tell user there BMI
+*/
+
+import java.util.Scanner;
+
+public class BMIv2 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("What is your name? ");
+        String name = in.nextLine();
+
+        System.out.println("What is your weight(pounds)? ");
+        double weightPound = in.nextDouble();
+        double weightKilograms = weightPound*0.45359237;
+
+        System.out.println("What is your height(Feet and Inches (put space between the feet and the inches))? ");
+        float heightFeet = in.nextInt();
+        float heightInches = in.nextFloat();
+        double heightMeters = ((heightFeet*12)+heightInches)*0.0254;
+
+
+        System.out.println("----------------------------------");
+        //name
+        System.out.println("Name: "+name);
+        //weight
+        System.out.println("Weight (kg): "+weightKilograms);
+        //height
+        System.out.println("Height (m): "+heightMeters);
+        //BMI
+        double BMI = (int)((weightKilograms/(heightMeters*heightMeters) * 10 + 0.5)/10.0); //rounds to 10th
+        System.out.println(BMI);
+        //If or if not overweight
+        if (BMI<18.5) {
+            System.out.println("You are under weight");
+        }
+        else if (BMI<24.9){
+            System.out.println("You are normal");
+        }
+        else if (BMI<29.9) {
+            System.out.println("Overweight");
+        }
+        else {
+            System.out.println("You are obese");
+        }
+
+        in.close();
+    }
+    
+}
