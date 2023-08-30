@@ -1,3 +1,5 @@
+package FVLS_flex.Mod_4.Mod_4_Assigment._4_7;
+
 public class MathTrick {
 	public static int getRandomNum() {
 		int num;
