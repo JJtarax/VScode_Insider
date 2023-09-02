@@ -3,7 +3,7 @@ package FVLS_flex.Mod_4.Mod_4_Assigment._4_7;
 public class MathTrick {
 	public static int getRandomNum() {
 		int num;
-		do {
+		while (true) {
 			num = (int) (Math.random() * 900) + 100; // Generates a random 3-digit number
 			int firstDigit = num / 100;
 			int lastDigit = num % 10;
@@ -11,7 +11,7 @@ public class MathTrick {
 			if (diff > 1) {
 				break;
 			}
-		} while (true);
+		}
 		return num;
 	}
 
