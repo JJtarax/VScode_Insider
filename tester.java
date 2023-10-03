@@ -1,12 +1,12 @@
 public class tester {
     public static void main(String[] args) {
 
-        int x = 1;
-        int y = 0;
+        for (int i = 0; i < 10; i++)
 
-        System.out.println(!(x != 0 || y != 0)); // Original expression
-        System.out.println(!(x != 0) && !(y != 0)); // Simplified expression using De Morgan's law
+        {
 
+            System.out.print(i);
+
+        }
     }
-
 }

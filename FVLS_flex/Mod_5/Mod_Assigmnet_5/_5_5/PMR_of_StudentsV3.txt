@@ -1,0 +1,11 @@
+Project Title: StudnetV3 & StudnetTesterV3
+Purpose of Project: To find the average of 2 grades that have been provided and also find the difference of those two
+Version/Date: 
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I got to learn how to access code from another file and use it on a differnce project
+
+<-s>: I had a but of problem with setting up the code but i got it working and i had a bit of problem on my side where my tester file couldn't find main class but after a bit of troubleshoot i got it working
+--------------
+In the future: I will be about to make more projects like this

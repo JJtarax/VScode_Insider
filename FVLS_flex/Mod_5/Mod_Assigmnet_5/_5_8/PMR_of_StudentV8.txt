@@ -1,0 +1,11 @@
+Project Title: StudnetV8.java & StudnetTesterV8
+Purpose of Project: Show the average grade of students that have been provided with two of their grades
+Version/Date: 9/17/23
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I got to laern and use get and set. Also learned abit more about construers
+
+<-s>: I had a bit of trouble understanding how the getter and setter worked but now i feel like i can use it on other projects with ease
+--------------
+In the future: I will be able to use getter and setters
