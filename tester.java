@@ -6,34 +6,14 @@ import java.util.Scanner;
 
 public class tester {
     public static void main(String[] args) {
-<<<<<<< Updated upstream
+        String[] mascots = { "Knights", "Seminoles", "Bulls", "Gators" };
+        int n = -1;
+        String str = "";
 
-        for (int i = 0; i < 10; i++)
-
-        {
-
-            System.out.print(i);
-
+        for (String m : mascots) {
+            n = m.indexOf("i") + 2;
+            str += m.substring(n);
         }
-=======
-        String g1 = "Good Morning!";
-        String g2 = "Good Afternoon!";
-
-        g1.substring()
-        boolean a = false;
-        boolean b = true;
-        int c = 0;
-        int d = 10;
-
-        for(int i = 0; i < 20; i++)
-            if((i > d)) {
-                System.out.print("TRUE : ");
-                System.out.println(i);
-            }
-            else {
-                System.out.print("FALSE : ");
-                System.out.println(i);
-            }
->>>>>>> Stashed changes
+        System.out.println(str);
     }
 }
