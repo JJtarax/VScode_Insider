@@ -7,8 +7,8 @@
  *
  * Code adapted from work by Laurie White for the College Board.
  *
- * @author (enter your name)
- * @version (enter today's date)
+ * @author Tejas Upadhyay
+ * @version 07/01/2024
  */
 public class Magpie2 {
     /**
@@ -39,10 +39,10 @@ public class Magpie2 {
         } else if (statement.indexOf("dog") >= 0
                 || statement.indexOf("car") >= 0) {
             response = "Tell me more about your pets";
-        } else if (statement.indexOf("Mr.Finkelstein") >= 0) {
+        } else if (statement.indexOf("Mr.Fisher") >= 0) {
             response = "He sounds like a good teacher.";
-        } else if (response.indexOf("") >= 0) {
-            response = "Say something, please.";
+        } else if (statement.indexOf("brother") >= 0) {
+            response = "wasd";
         } else {
             response = getRandomResponse();
         }

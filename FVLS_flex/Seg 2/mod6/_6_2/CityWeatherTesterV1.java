@@ -30,9 +30,9 @@ public class CityWeatherTesterV1 {
             System.out.printf("%23.1f%n", cityWeather.getPrecipitation()[i]);
 
         }
-        System.out.println(
-                "    Average: " + cityWeather.averageTemperature() + " Total: " + cityWeather.totalPrecipitation());
         System.out.println("*********************************************************");
+        System.out.printf("\tAverage: %.1f", cityWeather.averageTemperature());
+        System.out.printf("\t\tAnnual: %.1f%n", cityWeather.totalPrecipitation());
 
     }
 
@@ -57,21 +57,22 @@ public class CityWeatherTesterV1 {
         System.out.println();
 
         // input to decide F/C and in/cm - to be completed in 6.02
-        System.out.print("Do you want the results in F or C? ");
+        System.out.print("Do you want the results in Fahrenheit (F) or Celsius (C)? ");
         String Temp = in.nextLine().toLowerCase();
-        System.out.print("Do you want the results Inches In or Centimeters? ");
+        System.out.print("Do you want the results Inches (In) or Centimeters (Cm)? ");
         String length = in.nextLine().toLowerCase();
 
         // conditions & method call to convert temp, if needed - to be completed in 6.02
-        if (Temp.equals("c")) {
+        if (Temp.equals("f") || Temp.equals("fahrenheit")) {
             cityWeather.CelsiusToFahrenheit();
-
+        } else {
+            tempLabel = "C";
         }
 
         // conditions & method call to convert prec, if needed - to be completed in 6.02
-        if (length.equals("cm") || length.equals("centimeters")) {
+        if (length.equals("cm") || length.equals("centimeters") || length.equals("c")) {
             cityWeather.InchesToCentimeters();
-
+            precipLabel = "Cm";
         }
 
         // method call to calculate the average temperature
