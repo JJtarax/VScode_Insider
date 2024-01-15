@@ -1,0 +1,11 @@
+Project Title: GradesV1
+Purpose of Project: To Display the grades of students
+Version/Date: January 10 2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: 
+
+<-s>: I had some trouble with printf but after looking at the assigment 06.02's lesson and the help of my dad I figured it out
+--------------
+In the future: I will know how to use the printf funtion

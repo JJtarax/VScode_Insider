@@ -1,19 +1,34 @@
-import java.util.concurrent.CountDownLatch;
+/**
+ * This class demonstrates the toString method.
+ *
+ * @author Jean E. Sammet
+ * @version 06/16/17
+ */
 
-import javax.lang.model.util.ElementScanner14;
+class ComputerLanguage {
+    private String language;
+    private double version;
 
-import java.util.Scanner;
+    ComputerLanguage(String language, double version) {
+        this.language = language;
+        this.version = version;
+    }
+
+    public String toString() {
+        return String.format("%-12s %5.2f", this.language, this.version);
+    }
+}
 
 public class tester {
     public static void main(String[] args) {
-        String[] mascots = { "Knights", "Seminoles", "Bulls", "Gators" };
-        int n = -1;
-        String str = "";
+        ComputerLanguage example1 = new ComputerLanguage("Java", 8.0);
+        ComputerLanguage example2 = new ComputerLanguage("Python", 3.1);
 
-        for (String m : mascots) {
-            n = m.indexOf("i") + 2;
-            str += m.substring(n);
-        }
-        System.out.println(str);
+        System.out.println(" Computer Programming ");
+        System.out.println("----------------------");
+        System.out.println("Language     Version");
+
+        System.out.println(example1); // uses toString() method
+        System.out.println(example2); // uses toString() method
     }
 }

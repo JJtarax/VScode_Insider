@@ -41,10 +41,13 @@ public class GradesV1 {
         return (grades1 + grades2) / 2.0;
     }
 
+    // public String toString() {
+    // if (name.length() > 6)
+    // return name + "\t\t " + grades1 + "\t\t\t " + grades2;
+    // else
+    // return name + "\t\t\t " + grades1 + "\t\t\t " + grades2;
+    // }
     public String toString() {
-        if (name.length() > 6)
-            return name + "\t\t " + grades1 + "\t\t\t " + grades2;
-        else
-            return name + "\t\t\t " + grades1 + "\t\t\t " + grades2;
+        return String.format("%-12s %5.2f", this.grades1, this.grades2);
     }
 }
