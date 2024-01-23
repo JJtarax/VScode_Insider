@@ -1,0 +1,11 @@
+Project Title: CityWeatherV1
+Purpose of Project: To tell you the amount of rain
+Version/Date: January 8 2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: Learned more about arrays and also learned about printf
+
+<-s>: Understanding how printf works. At first i was treating it like a print then later i understood that you use , (ex: "%.1f", "example" + CityWeather) and not + (ex: "%.1f example" + CityWeather)
+--------------
+In the future: I will be able to use arrays and printf

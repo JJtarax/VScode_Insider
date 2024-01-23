@@ -4,8 +4,8 @@ Version/Date: January 10 2024
 Author: Tejas Upadhyay
 ----
 PMR:
-<+s>: 
+<+s>: I was able to code even after taking a about 2 weeks off
 
-<-s>: I had some trouble with printf but after looking at the assigment 06.02's lesson and the help of my dad I figured it out
+<-s>: Having some trouble with toString
 --------------
 In the future: I will know how to use the printf funtion

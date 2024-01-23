@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * This class demonstrates the toString method.
  *
@@ -21,14 +23,16 @@ class ComputerLanguage {
 
 public class tester {
     public static void main(String[] args) {
-        ComputerLanguage example1 = new ComputerLanguage("Java", 8.0);
-        ComputerLanguage example2 = new ComputerLanguage("Python", 3.1);
+        ArrayList<Double> aList = new ArrayList<Double>();
+        aList.add(3.5);
+        aList.add(4.3);
+        aList.add(1, 12.3);
+        aList.set(2, 18.9);
+        aList.add(-42.6);
+        aList.set(0, -20.3);
+        aList.remove(3);
+        aList.add(24.8);
 
-        System.out.println(" Computer Programming ");
-        System.out.println("----------------------");
-        System.out.println("Language     Version");
-
-        System.out.println(example1); // uses toString() method
-        System.out.println(example2); // uses toString() method
+        System.out.println(aList);
     }
 }
