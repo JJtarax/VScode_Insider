@@ -1,14 +1,11 @@
 
 /**
- * Starter code for the Hurricane Tester
+ * Code to see the data of hurricanes within the years that are provided in a txt file
  * Tejas Upadhyay
  *
  */
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.DecimalFormat;
-import java.time.Year;
 import java.io.File;
 import java.util.Scanner;
 
@@ -89,50 +86,9 @@ public class HurricaneTester
                     "The data that we have range of is from " + years[0] + " to " + years[years.length - 1] + "\n");
             return;
         }
+
+        // print the data
         System.out.println(
                 Hurricane.toString(yearRangeTo, yearRangeFrom, hurricanes, categories, years, pressures, windSpeeds));
-        // // print the data
-        // System.out.println("\t\t\tHurricanes " + yearRangeFrom + " - " +
-        // yearRangeTo);
-        // System.out.println("""
-        // Year\tHurricane\tCategory\tPressuure (mb)\tWind Speed (mph)
-        // ========================================================================""");
-        // DecimalFormat df = new DecimalFormat("0.00");
-        // for (Hurricane hurricane : hurricanes) {
-        // if (hurricane.getYear() >= yearRangeFrom && hurricane.getYear() <=
-        // yearRangeTo) {
-        // if (hurricane.getName().length() > 7)
-        // System.out.printf("%d\t%s\t\t\b\b\b\b\b%1d\t\t %s\t\t %s%n",
-        // hurricane.getYear(),
-        // hurricane.getName(), hurricane.getCat(),
-        // hurricane.getPressure() < 1000 ? " " + hurricane.getPressure()
-        // : hurricane
-        // .getPressure(),
-        // hurricane.getWindspeed() < 100 ? " " + df.format(hurricane.getWindspeed())
-        // : df.format(hurricane.getWindspeed()));
-        // else
-        // System.out.printf("%d\t%s\t\t\t\b\b\b\b\b%1d\t\t %s\t\t %s%n",
-        // hurricane.getYear(),
-        // hurricane.getName(), hurricane.getCat(),
-        // hurricane.getPressure() < 1000 ? " " + hurricane.getPressure()
-        // : hurricane
-        // .getPressure(),
-        // hurricane.getWindspeed() < 100 ? " " + df.format(hurricane.getWindspeed())
-        // : df.format(hurricane.getWindspeed()));
-        // }
-        // }
-        // System.out.println("========================================================================");
-        // System.out.printf("\tAverage: %13.1f %18.1f %14.2f%n",
-        // Hurricane.getAverageValue(categories, years, yearRangeFrom, yearRangeTo),
-        // Hurricane.getAverageValue(pressures, years, yearRangeFrom, yearRangeTo),
-        // Hurricane.getAverageValue(windSpeeds, years, yearRangeFrom, yearRangeTo));
-        // System.out.printf("\tMinimum: %11d %18d %16.2f%n",
-        // Hurricane.getMinValue(categories, years, yearRangeFrom, yearRangeTo),
-        // Hurricane.getMinValue(pressures, years, yearRangeFrom, yearRangeTo),
-        // Hurricane.getMinValue(windSpeeds, years, yearRangeFrom, yearRangeTo));
-        // System.out.printf("\tMaximum: %11d %18d %16.2f%n",
-        // Hurricane.getMaxValue(categories, years, yearRangeFrom, yearRangeTo),
-        // Hurricane.getMaxValue(pressures, years, yearRangeFrom, yearRangeTo),
-        // Hurricane.getMaxValue(windSpeeds, years, yearRangeFrom, yearRangeTo));
     }
 }

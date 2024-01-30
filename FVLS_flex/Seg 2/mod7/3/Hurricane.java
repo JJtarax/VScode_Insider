@@ -86,18 +86,34 @@ public class Hurricane {
    }
 
    public static String toString(int yearRangeTo, int yearRangeFrom, Hurricane[] hurricanes, int[] categories,
-         int[] years,
-         int[] pressures, double[] windSpeeds) {
-      String result = String.format(
-            "\t\t\tHurricanes %d - %d\nYear\tHurricane\tCategory\tPressure (mb)\tWind Speed (mph)\n", yearRangeFrom,
+         int[] years, int[] pressures, double[] windSpeeds) {
+      String str = String.format(
+            "\t\t\tHurricanes %d - %d\n\nYear\tHurricane\tCategory\tPressure (mb)\tWind Speed (mph)\n", yearRangeFrom,
             yearRangeTo);
-
+      str += "========================================================================\n";
+      int cat1 = 0;
+      int cat2 = 0;
+      int cat3 = 0;
+      int cat4 = 0;
+      int cat5 = 0;
       DecimalFormat df = new DecimalFormat("0.00");
       for (Hurricane hurricane : hurricanes) {
+
          if (hurricane.getYear() >= yearRangeFrom && hurricane.getYear() <= yearRangeTo) {
+            if (hurricane.getCat() == 1) {
+               cat1++;
+            } else if (hurricane.getCat() == 2) {
+               cat2++;
+            } else if (hurricane.getCat() == 3) {
+               cat3++;
+            } else if (hurricane.getCat() == 4) {
+               cat4++;
+            } else if (hurricane.getCat() == 5) {
+               cat5++;
+            }
             String name = hurricane.getName();
             if (name.length() > 7) {
-               result += String.format("%d\t%s\t\t\b\b\b\b\b%1d\t\t %s\t\t %s%n",
+               str += String.format("%d\t%s\t\t\b\b\b\b\b%1d\t\t %s\t\t %s%n",
                      hurricane.getYear(),
                      name, hurricane.getCat(),
                      hurricane.getPressure() < 1000 ? " " + hurricane.getPressure()
@@ -105,7 +121,7 @@ public class Hurricane {
                      hurricane.getWindspeed() < 100 ? " " + df.format(hurricane.getWindspeed())
                            : df.format(hurricane.getWindspeed()));
             } else {
-               result += String.format("%d\t%s\t\t\t\b\b\b\b\b%1d\t\t %s\t\t %s%n",
+               str += String.format("%d\t%s\t\t\t\b\b\b\b\b%1d\t\t %s\t\t %s%n",
                      hurricane.getYear(),
                      name, hurricane.getCat(),
                      hurricane.getPressure() < 1000 ? " " + hurricane.getPressure()
@@ -115,8 +131,28 @@ public class Hurricane {
             }
          }
       }
-      result += "==================\n";
-      return result;
+      str += "========================================================================\n";
+      str += String.format("\tAverage: %13.1f %16.1f %15.2f%n",
+            Hurricane.getAverageValue(categories, years, yearRangeFrom, yearRangeTo),
+            Hurricane.getAverageValue(pressures, years, yearRangeFrom, yearRangeTo),
+            Hurricane.getAverageValue(windSpeeds, years, yearRangeFrom, yearRangeTo));
+      str += String.format("\tMinimum: %11d %16d %16.2f%n",
+            Hurricane.getMinValue(categories, years, yearRangeFrom, yearRangeTo),
+            Hurricane.getMinValue(pressures, years, yearRangeFrom, yearRangeTo),
+            Hurricane.getMinValue(windSpeeds, years, yearRangeFrom, yearRangeTo));
+      str += String.format("\tMaximum: %11d %17d %16.2f%n",
+            Hurricane.getMaxValue(categories, years, yearRangeFrom, yearRangeTo),
+            Hurricane.getMaxValue(pressures, years, yearRangeFrom, yearRangeTo),
+            Hurricane.getMaxValue(windSpeeds, years, yearRangeFrom, yearRangeTo));
+      str += "Summary of Categories:\n";
+
+      str += String.format("%9s %2d %n", "Cat 1:", cat1);
+      str += String.format("%9s %2d %n", "Cat 2:", cat2);
+      str += String.format("%9s %2d %n", "Cat 3:", cat3);
+      str += String.format("%9s %2d %n", "Cat 4:", cat4);
+      str += String.format("%9s %2d %n", "Cat 5:", cat5);
+
+      return str;
    }
 
    public static double getAverageValue(double[] array, int[] years, int yearFrom, int yearTo) {

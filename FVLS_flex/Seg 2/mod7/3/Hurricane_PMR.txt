@@ -1,0 +1,11 @@
+Project Title: Hurricane & HurricaneTester
+Purpose of Project: Code to see the data of hurricanes within the years that are provided in a txt file
+Version/Date: 01/28/2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: Got more hands on exprince on arrays and toString (String.formant())
+
+<-s>: I had to look stuff up to understand it even more
+--------------
+In the future: I will be able to use string.formant and arrays more
