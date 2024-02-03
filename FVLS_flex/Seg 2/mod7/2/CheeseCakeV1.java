@@ -27,10 +27,11 @@ public class CheeseCakeV1 {
      */
     public void calcTotalServings() {
         // ******* fill in code for method here - 16 servings per cake ****//
-        int ser = 0;
-        for (int i = 0; i >= this.myQuantity; i++) {
-            ser += 16;
+        int servings = 0;
+        for (int i = 0; i <= this.myQuantity; i++) {
+            servings += 16;
         }
+
     }
 
     /**
@@ -39,7 +40,7 @@ public class CheeseCakeV1 {
     public void calcCreamCheese() {
         // ******* fill in rest of method here - 32 ounces per cake ****//
         int CreamCheese = 0;
-        for (int i = 0; i >= this.myQuantity; i++) {
+        for (int i = 0; i <= this.myQuantity; i++) {
             CreamCheese += 32;
         }
     }
@@ -50,7 +51,7 @@ public class CheeseCakeV1 {
     public void calcVanilla() {
         // ******* fill in rest of method here - 1 teaspoon per cake ****//
         int Vaniila = 0;
-        for (int i = 0; i >= this.myQuantity; i++) {
+        for (int i = 0; i <= this.myQuantity; i++) {
             Vaniila += 1;
         }
     }
@@ -61,7 +62,7 @@ public class CheeseCakeV1 {
     public void calcSugar() {
         // ******* fill in rest of method here - 1/3 cup per cake ****//
         double Sugar = 0;
-        for (int i = 0; i >= this.myQuantity; i++) {
+        for (int i = 0; i <= this.myQuantity; i++) {
             Sugar += 1 / 3;
         }
     }
