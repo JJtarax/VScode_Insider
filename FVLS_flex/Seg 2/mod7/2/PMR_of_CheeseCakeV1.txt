@@ -1,0 +1,11 @@
+Project Title: CheeseCakeV1 & CheeseCakeTesterV1
+Purpose of Project: The purpose of this code is to be able to calculations how much ingredient is need for each flavor of cheese cake
+Version/Date: 02/04/2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I was able to learn and implement ArrayList
+
+<-s>: I had gotten a part in the Mutator methods wrong which i had figured out with a little help of my dad
+--------------
+In the future: I will know how to use for loops and i will be able to use ArrayList
