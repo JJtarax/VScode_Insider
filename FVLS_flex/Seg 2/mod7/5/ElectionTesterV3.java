@@ -1,19 +1,13 @@
-import java.util.ArrayList;
-
-public class ElectionTesterV2 {
-    public static void printElectionResults(ArrayList<Candidate> candidates) {
+public class ElectionTesterV3 {
+    public static void printElectionResults(Candidate[] candidates, int[] votes) {
 
         System.out.print("""
-                \n\nElections Results:
                                      Votes           % of Total
-                Candidate           Received            Votes
+                Candidate           Recieved            Votes
                 ===============================================
                             """);
 
-        int totalVotes = 0;
-        for (Candidate candidate : candidates) {
-            totalVotes += candidate.getVotes();
-        }
+        int totalVotes = Candidate.sumOfVotes(votes);
 
         for (Candidate candidate : candidates) {
             float percentVotes = ((float) candidate.getVotes() / totalVotes) * 100;
@@ -35,43 +29,43 @@ public class ElectionTesterV2 {
     }
 
     public static void main(String[] args) {
-        ArrayList<Candidate> votes = new ArrayList<Candidate>();
-
-        // add Blueberry to the ArrayList
-        Candidate ts = new Candidate("Tony Stark", 3691);
-        Candidate hp = new Candidate("Henry Pym", 2691);
-        Candidate bb = new Candidate("B____ B_____", 1962);
-        Candidate sr = new Candidate("S____ R_____", 1491);
-        Candidate cd = new Candidate("C____ D______", 1968);
-
-        votes.add(ts);
-        votes.add(hp);
-        votes.add(bb);
-        votes.add(sr);
-        votes.add(cd);
-
-        System.out.println(" Raw Election Data:");
-        for (Candidate candidate : votes) {
-            System.out.println(candidate.toString());
+        String[] names = { "Tony Stark", "Henry Pym", "Bruce Banner", "S____ R_____", "C____ D______" };
+        int[] votes = { 751, 496, 303, 225, 81 };
+        int j = names.length;
+        Candidate[] candidates = new Candidate[j];
+        // System.out.println(" Raw Election Data:");
+        for (int i = 0; i < candidates.length; i++) {
+            candidates[i] = new Candidate(names[i], votes[i]);
+            // System.out.println(candidates[i].toString());
         }
+        System.out.println("Original Results:\n");
+        printElectionResults(candidates, votes);
 
-        printElectionResults(votes);
+        for (Candidate candidate : candidates) {
 
-        for (Candidate candidate : votes) {
-            if (candidate.getName().equals("B____ B_____")) {
+            if (candidate.getName().equals("Bruce Banner")) {
                 candidate.setName("Stan Lee");
             }
         }
 
-        printElectionResults(votes);
+        System.out.println("<< Changing Bruce Banner to Stan Lee >>\n");
+        printElectionResults(candidates, votes);
 
-        for (Candidate candidate : votes) {
+        for (Candidate candidate : candidates) {
+
             if (candidate.getName().equals("Henry Pym")) {
+                for (int i = 0; i < votes.length; i++) {
+                    if (votes[i] == candidate.getVotes()) {
+                        votes[i] = 284;
+                    }
+                }
                 candidate.setVotes(284);
+
             }
         }
 
-        printElectionResults(votes);
+        System.out.println("\n\n<< Changing Henry Pym votes to 284 >>\n");
+        printElectionResults(candidates, votes);
 
     }
 }

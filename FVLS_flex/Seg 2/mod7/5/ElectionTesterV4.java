@@ -1,10 +1,9 @@
 import java.util.ArrayList;
 
-public class ElectionTesterV2 {
+public class ElectionTesterV4 {
     public static void printElectionResults(ArrayList<Candidate> candidates) {
 
         System.out.print("""
-                \n\nElections Results:
                                      Votes           % of Total
                 Candidate           Received            Votes
                 ===============================================
@@ -35,43 +34,42 @@ public class ElectionTesterV2 {
     }
 
     public static void main(String[] args) {
-        ArrayList<Candidate> votes = new ArrayList<Candidate>();
+        ArrayList<Candidate> candidates = new ArrayList<>();
 
-        // add Blueberry to the ArrayList
-        Candidate ts = new Candidate("Tony Stark", 3691);
-        Candidate hp = new Candidate("Henry Pym", 2691);
-        Candidate bb = new Candidate("B____ B_____", 1962);
-        Candidate sr = new Candidate("S____ R_____", 1491);
-        Candidate cd = new Candidate("C____ D______", 1968);
+        // add Candidates to the ArrayList
+        candidates.add(new Candidate("Tony Stark", 751));
+        candidates.add(new Candidate("Henry Pym", 496));
+        candidates.add(new Candidate("Bruce Banner", 303));
+        candidates.add(new Candidate("S____ R_____", 225));
+        candidates.add(new Candidate("C____ D______", 81));
 
-        votes.add(ts);
-        votes.add(hp);
-        votes.add(bb);
-        votes.add(sr);
-        votes.add(cd);
+        // System.out.println(" Raw Election Data:");
+        // for (Candidate candidate : candidates) {
+        // System.out.println(candidate.toString());
+        // }
 
-        System.out.println(" Raw Election Data:");
-        for (Candidate candidate : votes) {
-            System.out.println(candidate.toString());
-        }
+        System.out.println("Original Results:\n");
+        printElectionResults(candidates);
 
-        printElectionResults(votes);
-
-        for (Candidate candidate : votes) {
-            if (candidate.getName().equals("B____ B_____")) {
+        // Changing Bruce Banner to Stan Lee
+        for (Candidate candidate : candidates) {
+            if (candidate.getName().equals("Bruce Banner")) {
                 candidate.setName("Stan Lee");
             }
         }
 
-        printElectionResults(votes);
+        System.out.println("<< Changing Bruce Banner to Stan Lee >>\n");
+        printElectionResults(candidates);
 
-        for (Candidate candidate : votes) {
+        // Changing Henry Pym votes to 284
+        for (Candidate candidate : candidates) {
             if (candidate.getName().equals("Henry Pym")) {
                 candidate.setVotes(284);
             }
         }
 
-        printElectionResults(votes);
+        System.out.println("\n\n<< Changing Henry Pym votes to 284 >>\n");
+        printElectionResults(candidates);
 
     }
 }

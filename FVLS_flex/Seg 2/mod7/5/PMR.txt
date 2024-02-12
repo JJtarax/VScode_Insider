@@ -1,0 +1,11 @@
+Project Title: ElectionV3&4
+Purpose of Project: To list the results of the election
+Version/Date: 02/09/2023
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: More use with arraylist and also learned some more things about arrays with this assigment
+
+<-s>: i had a little trouble with the formatting but i got it to work
+--------------
+In the future: i will be able to format better and do more with arrays
