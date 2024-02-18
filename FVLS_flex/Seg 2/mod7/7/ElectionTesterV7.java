@@ -1,3 +1,9 @@
+/*
+ * To display the votes of the election
+ * 
+ * @author Tejas Upadhyay
+ * @version Januray __ 2024
+ */
 public class ElectionTesterV7 {
     public static void printElectionResults(Candidate[] candidates, int[] votes) {
 
@@ -28,11 +34,51 @@ public class ElectionTesterV7 {
         System.out.println("\nThe total number of votes is: " + totalVotes);
     }
 
+    public static Candidate[] removeTheElement(Candidate[] array, int index) {
+
+        // Create another array of size one less
+        Candidate[] anotherArray = new Candidate[array.length - 1];
+
+        // Copy the elements except the index
+        // from original array to the other array
+        for (int i = 0, k = 0; i < array.length; i++) {
+
+            // if the index is
+            // the removal element index
+            if (i == index) {
+                continue;
+            }
+
+            // if the index is not
+            // the removal element index
+            anotherArray[k++] = array[i];
+        }
+
+        // return the resultant array
+        return anotherArray;
+    }
+
     public static void main(String[] args) {
-        String[] names = { "Tony Stark", "Henry Pym", "Bruce Banner", "S____ R_____", "C____ D______" };
-        int[] votes = { 751, 496, 303, 225, 81 };
-        int j = names.length;
-        Candidate[] candidates = new Candidate[j];
+        String[] names = {
+                "Tony Stark",
+                "Henry Pym",
+                "Bruce Banner",
+                "S____ R_____",
+                "C____ D______",
+                "P______ P____",
+                "P___ C______",
+                "M_____ H___" };
+        int[] votes = {
+                751,
+                496,
+                303,
+                225,
+                451,
+                634,
+                235,
+                204 };
+        int x = names.length;
+        Candidate[] candidates = new Candidate[x];
         // System.out.println(" Raw Election Data:");
         for (int i = 0; i < candidates.length; i++) {
             candidates[i] = new Candidate(names[i], votes[i]);
@@ -41,31 +87,21 @@ public class ElectionTesterV7 {
         System.out.println("Original Results:\n");
         printElectionResults(candidates, votes);
 
-        for (Candidate candidate : candidates) {
+        candidates = removeTheElement(candidates, 4);
 
-            if (candidate.getName().equals("Bruce Banner")) {
-                candidate.setName("Stan Lee");
-            }
-        }
-
-        System.out.println("<< Changing Bruce Banner to Stan Lee >>\n");
+        System.out.println("<< Remove 4th position >>\n");
         printElectionResults(candidates, votes);
 
-        for (Candidate candidate : candidates) {
+        for (int i = 0; i < candidates.length; i++) {
+            if (candidates[i].getName().equals("Henry Pym")) {
 
-            if (candidate.getName().equals("Henry Pym")) {
-                for (int i = 0; i < votes.length; i++) {
-                    if (votes[i] == candidate.getVotes()) {
-                        votes[i] = 284;
-                    }
-                }
-                candidate.setVotes(284);
-
+                candidates = removeTheElement(candidates, i);
             }
         }
 
-        System.out.println("\n\n<< Changing Henry Pym votes to 284 >>\n");
+        System.out.println("\n\n<< Deleting Henry Pym >>\n");
         printElectionResults(candidates, votes);
 
     }
+
 }

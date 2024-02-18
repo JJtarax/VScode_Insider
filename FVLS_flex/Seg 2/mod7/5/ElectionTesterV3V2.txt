@@ -68,4 +68,13 @@ public class ElectionTesterV3 {
         printElectionResults(candidates, votes);
 
     }
+
+    public static int sumOfVotes(int[] voteAmount) {
+        int sum = 0;
+
+        for (int votes : voteAmount) {
+            sum += votes;
+        }
+        return sum;
+    }
 }

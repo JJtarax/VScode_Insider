@@ -1,13 +1,6 @@
-
-/*
- * To display the votes of the election
- * 
- * @author Tejas Upadhyay
- * @version Januray __ 2024
- */
 import java.util.ArrayList;
 
-public class ElectionTesterV8 {
+public class ElectionTesterV4V3 {
     public static void printElectionResults(ArrayList<Candidate> candidates) {
 
         System.out.print("""
@@ -48,10 +41,7 @@ public class ElectionTesterV8 {
         candidates.add(new Candidate("Henry Pym", 496));
         candidates.add(new Candidate("Bruce Banner", 303));
         candidates.add(new Candidate("S____ R_____", 225));
-        candidates.add(new Candidate("C____ D______", 451));
-        candidates.add(new Candidate("P______ P____", 634));
-        candidates.add(new Candidate("P___ C______", 235));
-        candidates.add(new Candidate("M____ H___set", 204));
+        candidates.add(new Candidate("C____ D______", 81));
 
         // System.out.println(" Raw Election Data:");
         // for (Candidate candidate : candidates) {
@@ -61,21 +51,26 @@ public class ElectionTesterV8 {
         System.out.println("Original Results:\n");
         printElectionResults(candidates);
 
-        candidates.remove(4);
-
-        System.out.println("<< Removing 4th position >>\n");
-        printElectionResults(candidates);
-
-        // Changing Henry Pym votes to 284
-        for (int i = 0; i < candidates.size(); i++) {
-            if (candidates.get(i).getName().equals("Henry Pym")) {
-
-                candidates.remove(i);
+        // Changing Bruce Banner to Stan Lee
+        for (Candidate candidate : candidates) {
+            if (candidate.getName().equals("Bruce Banner")) {
+                candidate.setName("Stan Lee");
             }
         }
 
-        System.out.println("\n\n<< Deleting Henry Pym >>\n");
+        System.out.println("<< Changing Bruce Banner to Stan Lee >>\n");
+        printElectionResults(candidates);
+
+        // Changing Henry Pym votes to 284
+        for (Candidate candidate : candidates) {
+            if (candidate.getName().equals("Henry Pym")) {
+                candidate.setVotes(284);
+            }
+        }
+
+        System.out.println("\n\n<< Changing Henry Pym votes to 284 >>\n");
         printElectionResults(candidates);
 
     }
+
 }

@@ -1,18 +1,23 @@
-import java.util.ArrayList;
+public class ElectionTesterV3V3 {
 
-public class ElectionTesterV4 {
-    public static void printElectionResults(ArrayList<Candidate> candidates) {
+    public static int sumOfVotes(int[] voteAmount) {
+        int sum = 0;
+
+        for (int votes : voteAmount) {
+            sum += votes;
+        }
+        return sum;
+    }
+
+    public static void printElectionResults(Candidate[] candidates, int[] votes) {
 
         System.out.print("""
                                      Votes           % of Total
-                Candidate           Received            Votes
+                Candidate           Recieved            Votes
                 ===============================================
                             """);
 
-        int totalVotes = 0;
-        for (Candidate candidate : candidates) {
-            totalVotes += candidate.getVotes();
-        }
+        int totalVotes = sumOfVotes(votes);
 
         for (Candidate candidate : candidates) {
             float percentVotes = ((float) candidate.getVotes() / totalVotes) * 100;
@@ -34,42 +39,43 @@ public class ElectionTesterV4 {
     }
 
     public static void main(String[] args) {
-        ArrayList<Candidate> candidates = new ArrayList<>();
-
-        // add Candidates to the ArrayList
-        candidates.add(new Candidate("Tony Stark", 751));
-        candidates.add(new Candidate("Henry Pym", 496));
-        candidates.add(new Candidate("Bruce Banner", 303));
-        candidates.add(new Candidate("S____ R_____", 225));
-        candidates.add(new Candidate("C____ D______", 81));
-
+        String[] names = { "Tony Stark", "Henry Pym", "Bruce Banner", "S____ R_____", "C____ D______" };
+        int[] votes = { 751, 496, 303, 225, 81 };
+        int j = names.length;
+        Candidate[] candidates = new Candidate[j];
         // System.out.println(" Raw Election Data:");
-        // for (Candidate candidate : candidates) {
-        // System.out.println(candidate.toString());
-        // }
-
+        for (int i = 0; i < candidates.length; i++) {
+            candidates[i] = new Candidate(names[i], votes[i]);
+            // System.out.println(candidates[i].toString());
+        }
         System.out.println("Original Results:\n");
-        printElectionResults(candidates);
+        printElectionResults(candidates, votes);
 
-        // Changing Bruce Banner to Stan Lee
         for (Candidate candidate : candidates) {
+
             if (candidate.getName().equals("Bruce Banner")) {
                 candidate.setName("Stan Lee");
             }
         }
 
         System.out.println("<< Changing Bruce Banner to Stan Lee >>\n");
-        printElectionResults(candidates);
+        printElectionResults(candidates, votes);
 
-        // Changing Henry Pym votes to 284
         for (Candidate candidate : candidates) {
+
             if (candidate.getName().equals("Henry Pym")) {
+                for (int i = 0; i < votes.length; i++) {
+                    if (votes[i] == candidate.getVotes()) {
+                        votes[i] = 284;
+                    }
+                }
                 candidate.setVotes(284);
+
             }
         }
 
         System.out.println("\n\n<< Changing Henry Pym votes to 284 >>\n");
-        printElectionResults(candidates);
+        printElectionResults(candidates, votes);
 
     }
 }

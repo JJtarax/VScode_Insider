@@ -1,0 +1,11 @@
+Project Title: ElectionTesterV7 & ElectionTesterV8
+Purpose of Project: To display the votes of the election
+Version/Date: 02/17/2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I learned how to delete a row in array and arrayList
+
+<-s>: I had a little problem with deleting items in array verison of this assignment
+--------------
+In the future: I will be able to delete items from array and arrayList
