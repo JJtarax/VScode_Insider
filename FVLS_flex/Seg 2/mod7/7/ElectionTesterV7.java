@@ -34,8 +34,16 @@ public class ElectionTesterV7 {
         System.out.println("\nThe total number of votes is: " + totalVotes);
     }
 
-    public static Candidate[] removeTheElement(Candidate[] array, int index) {
+    public static void removeCandidateByNameArray(Candidate[] candidates, String targetName) {
+        for (int i = 0; i < candidates.length; i++) {
+            if (candidates[i].getName().equals(targetName)) {
 
+                candidates = removeCandidateByPositionArray(candidates, i);
+            }
+        }
+    }
+
+    public static Candidate[] removeCandidateByPositionArray(Candidate[] array, int index) {
         // Create another array of size one less
         Candidate[] anotherArray = new Candidate[array.length - 1];
 
@@ -56,6 +64,17 @@ public class ElectionTesterV7 {
 
         // return the resultant array
         return anotherArray;
+    }
+
+    public static Candidate[] createCandidatesArray(String[] names, int[] votes) {
+        Candidate[] candidates = new Candidate[names.length];
+
+        for (int i = 0; i < candidates.length; i++) {
+            candidates[i] = new Candidate(names[i], votes[i]);
+            System.out.println(candidates[i].toString());
+        }
+
+        return candidates;
     }
 
     public static void main(String[] args) {
@@ -80,24 +99,17 @@ public class ElectionTesterV7 {
         int x = names.length;
         Candidate[] candidates = new Candidate[x];
         // System.out.println(" Raw Election Data:");
-        for (int i = 0; i < candidates.length; i++) {
-            candidates[i] = new Candidate(names[i], votes[i]);
-            // System.out.println(candidates[i].toString());
-        }
+        candidates = createCandidatesArray(names, votes);
+
         System.out.println("Original Results:\n");
         printElectionResults(candidates, votes);
 
-        candidates = removeTheElement(candidates, 4);
+        candidates = removeCandidateByPositionArray(candidates, 4);
 
         System.out.println("<< Remove 4th position >>\n");
         printElectionResults(candidates, votes);
 
-        for (int i = 0; i < candidates.length; i++) {
-            if (candidates[i].getName().equals("Henry Pym")) {
-
-                candidates = removeTheElement(candidates, i);
-            }
-        }
+        removeCandidateByNameArray(candidates, "Henry Pym");
 
         System.out.println("\n\n<< Deleting Henry Pym >>\n");
         printElectionResults(candidates, votes);

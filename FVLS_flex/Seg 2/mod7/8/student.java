@@ -1,71 +1,100 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class student {
-	public void studentPrint(ArrayList<String> studentNames, ArrayList<Integer> q1, ArrayList<Integer> q2,
-			ArrayList<Integer> q3, ArrayList<Integer> q4, ArrayList<Integer> q5) {
+	private String firstName;
+	private String lastName;
+	private int[] quizScores;
+
+	// Constructor
+	public student(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.quizScores = new int[5];
+	}
+
+	// Method to get quiz score by quiz number
+	public int getQuizScore(int quizNumber) {
+		return quizScores[quizNumber - 1];
+	}
+
+	// Method to set quiz score by quiz number
+	public void setQuizScore(int quizNumber, int score) {
+		quizScores[quizNumber - 1] = score;
+	}
+
+	// Getter for student name
+	public String getFullName() {
+		String name = firstName + " " + lastName;
+
+		if (firstName.length() == 13) {
+			name = name.substring(0, 13);
+
+		} else if (name.length() > 14) {
+			name = name.substring(0, 14) + ".";
+		}
+		return name;
+	}
+
+	// Setter for student name
+	public void setFullName(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	// toString method to print student information
+	@Override
+	public String toString() {
+		return firstName + " " + lastName + " Quiz Scores: " + Arrays.toString(quizScores);
+	}
+
+	public static void studentPrint(ArrayList<student> studentList) {
 		// Print out the headers for the table
-		System.out.println("Name\t\tQ1\tQ2\tQ3\tQ4\tQ5");
+		System.out.println("Student name\t Q1\tQ2\tQ3\tQ4\tQ5");
+		System.out.println("----------------------------------------------------");
 		// Loop through the ArrayLists and print out the data for each student
-		for (int j = 0; j < studentNames.size(); j++) {
-			System.out.printf("%-16s %-7d %%-7d %%-7d %%-7d %%-7d%n",
-					studentNames.get(j), q1.get(j), q2.get(j), q3.get(j), q4.get(j), q5.get(j));
+		for (student currentStudent : studentList) {
+			System.out.printf("%-16s %-6d %-7d %-7d %-7d %-7d%n",
+					currentStudent.getFullName(),
+					currentStudent.getQuizScore(1),
+					currentStudent.getQuizScore(2),
+					currentStudent.getQuizScore(3),
+					currentStudent.getQuizScore(4),
+					currentStudent.getQuizScore(5));
 		}
 	}
 
-	public static void main(String[] args) {
-		// Create ArrayLists to store student data
-		ArrayList<main> main = new ArrayList<>();
-		student student = new student();
-		ArrayList<String> studentNames = new ArrayList<>();
-		ArrayList<Integer> q1 = new ArrayList<>();
-		ArrayList<Integer> q2 = new ArrayList<>();
-		ArrayList<Integer> q3 = new ArrayList<>();
-		ArrayList<Integer> q4 = new ArrayList<>();
-		ArrayList<Integer> q5 = new ArrayList<>();
+	public static ArrayList<student> addNewStudentToClassList(ArrayList<student> studentList) {
 
-		// Create a Scanner object to get input from the user
 		Scanner in = new Scanner(System.in);
-		// Initialize a variable to store the user's response
-		String addMore = "yes";
+		// Get the student's first and last name
+		System.out.println("What is the student's first name?");
+		String fName = in.next();
+		System.out.println("What is the student's last name?");
+		String lName = in.next();
+		String name = fName + " " + lName;
+		student Currentstudent = new student(fName, lName);
 
-		// Loop until the user says no to adding more students
-		while (addMore.equalsIgnoreCase("yes")) {
-			// Get the student's first and last name
-			System.out.println("What is the student's first name?");
-			String fName = in.next();
-			System.out.println("What is the student's last name?");
-			String lName = in.next();
-			String name = fName + " " + lName;
-			// Add the student's name to the ArrayList
-			studentNames.add(name);
+		// if name to long then the formating of the table that is printed is weird
+		if (name.length() > 14) {
+			name = name.substring(0, 14) + ".";
+		}
+		// Add the student's name to the ArrayList
+		studentList.add(Currentstudent);
 
-			// Get the student's grades
-			System.out.println("Enter the grades for " + name + ":");
-			System.out.print("q1: ");
-			q1.add(in.nextInt());
-			System.out.print("q2: ");
-			q2.add(in.nextInt());
-			System.out.print("q3: ");
-			q3.add(in.nextInt());
-			System.out.print("q4: ");
-			q4.add(in.nextInt());
-			System.out.print("q5: ");
-			q5.add(in.nextInt());
-
-			// Ask the user if they want to add more students
-			System.out.println("Would you like to add more students? (yes/no)");
-			addMore = in.next().toLowerCase();
-			// Check if the user's response is valid
-			while (!addMore.equals("yes") && !addMore.equals("no")) {
-				System.out.println("Please enter 'yes' or 'no':");
-				addMore = in.next().toLowerCase();
-			}
+		int input = 0;
+		// Get the student's grades
+		System.out.println("Enter the grades for " + name + ":");
+		for (int i = 1; i < 6; i++) {
+			System.out.print("q" + i + ": ");
+			input = in.nextInt();
+			Currentstudent.setQuizScore(i, input);
 		}
 
-		// Calculate average grades and display results
-		student.studentPrint(studentNames, q1, q2, q3, q4, q5);
 		// Close scanner
 		in.close();
+
+		return studentList;
 	}
 }

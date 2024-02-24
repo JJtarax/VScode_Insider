@@ -1,6 +1,10 @@
+// Purpose of Project: To list the results of the election
+// Version/Date: 02/09/2023
+// Author: Tejas Upadhyay
+
 public class ElectionTesterV3V3 {
 
-    public static int sumOfVotes(int[] voteAmount) {
+    public static int sumOfVotesArray(int[] voteAmount) {
         int sum = 0;
 
         for (int votes : voteAmount) {
@@ -9,16 +13,7 @@ public class ElectionTesterV3V3 {
         return sum;
     }
 
-    public static void printElectionResults(Candidate[] candidates, int[] votes) {
-
-        System.out.print("""
-                                     Votes           % of Total
-                Candidate           Recieved            Votes
-                ===============================================
-                            """);
-
-        int totalVotes = sumOfVotes(votes);
-
+    public static void printArrayOfCadidates(Candidate[] candidates, int totalVotes) {
         for (Candidate candidate : candidates) {
             float percentVotes = ((float) candidate.getVotes() / totalVotes) * 100;
             if (percentVotes < 10.0 || candidate.getVotes() <= 99.0) {
@@ -34,8 +29,58 @@ public class ElectionTesterV3V3 {
 
             }
         }
+    }
+
+    public static void printArrayOfElectionResults(Candidate[] candidates, int[] votes) {
+
+        System.out.print("""
+                                     Votes           % of Total
+                Candidate           Recieved            Votes
+                ===============================================
+                            """);
+
+        int totalVotes = sumOfVotesArray(votes);
+
+        printArrayOfCadidates(candidates, totalVotes);
 
         System.out.println("\nThe total number of votes is: " + totalVotes);
+    }
+
+    public static void updateNameOfCandidateArray(Candidate[] candidates, String oldName, String newName) {
+        for (Candidate candidate : candidates) {
+
+            if (candidate.getName().equals(oldName)) {
+                candidate.setName(newName);
+                System.out.println(candidate.toString());
+            }
+        }
+    }
+
+    public static void updateCandidateVotesArray(Candidate[] candidates, String targetName, int[] votes,
+            int newVoteCount) {
+        for (Candidate candidate : candidates) {
+
+            if (candidate.getName().equals(targetName)) {
+                for (int i = 0; i < votes.length; i++) {
+                    if (votes[i] == candidate.getVotes()) {
+                        votes[i] = newVoteCount;
+                    }
+                }
+                candidate.setVotes(newVoteCount);
+                System.out.println(candidate.toString());
+            }
+        }
+    }
+
+    public static Candidate[] createCandidatesArray(String[] names, int[] votes) {
+        Candidate[] candidates = new Candidate[names.length];
+
+        for (int i = 0; i < candidates.length; i++) {
+            candidates[i] = new Candidate(names[i], votes[i]);
+            System.out.println(candidates[i].toString());
+        }
+
+        return candidates;
     }
 
     public static void main(String[] args) {
@@ -44,38 +89,20 @@ public class ElectionTesterV3V3 {
         int j = names.length;
         Candidate[] candidates = new Candidate[j];
         // System.out.println(" Raw Election Data:");
-        for (int i = 0; i < candidates.length; i++) {
-            candidates[i] = new Candidate(names[i], votes[i]);
-            // System.out.println(candidates[i].toString());
-        }
+        candidates = createCandidatesArray(names, votes);
+
         System.out.println("Original Results:\n");
-        printElectionResults(candidates, votes);
+        printArrayOfElectionResults(candidates, votes);
 
-        for (Candidate candidate : candidates) {
-
-            if (candidate.getName().equals("Bruce Banner")) {
-                candidate.setName("Stan Lee");
-            }
-        }
+        updateNameOfCandidateArray(candidates, "Bruce Banner", "Stan Lee");
 
         System.out.println("<< Changing Bruce Banner to Stan Lee >>\n");
-        printElectionResults(candidates, votes);
+        printArrayOfElectionResults(candidates, votes);
 
-        for (Candidate candidate : candidates) {
-
-            if (candidate.getName().equals("Henry Pym")) {
-                for (int i = 0; i < votes.length; i++) {
-                    if (votes[i] == candidate.getVotes()) {
-                        votes[i] = 284;
-                    }
-                }
-                candidate.setVotes(284);
-
-            }
-        }
+        updateCandidateVotesArray(candidates, "Henry Pym", votes, 284);
 
         System.out.println("\n\n<< Changing Henry Pym votes to 284 >>\n");
-        printElectionResults(candidates, votes);
+        printArrayOfElectionResults(candidates, votes);
 
     }
 }

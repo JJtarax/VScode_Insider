@@ -21,19 +21,25 @@ public class tester {
         // asking the user in what order they want the moives organized in
         System.out.println("How would you like to organize the movies? (title/year/studio)");
         String choice = in.nextLine();
+        in.close();
 
         // Sorting the movies
-        if (choice.equals("title")) {
+        if (choice.equalsIgnoreCase("title")) {
             movies.sort((m1, m2) -> m1.getTitle().compareTo(m2.getTitle())); // Sort by title
-        } else if (choice.equals("year")) {
+        } else if (choice.equalsIgnoreCase("year")) {
             movies.sort((m1, m2) -> m1.getYear() - m2.getYear()); // Sort by year
-        } else if (choice.equals("studio")) {
+        } else if (choice.equalsIgnoreCase("studio")) {
             movies.sort((m1, m2) -> m1.getStudio().compareTo(m2.getStudio())); // Sort by studio
         }
 
         // Print the sorted movies
         System.out.println("Here is your list: ");
-        System.out.println(movies.toString());
+        printAllMovie(movies);
+
     }
 
+    public static void printAllMovie(ArrayList<Movie> moives) {
+        System.out.println(moives.toString());
+
+    }
 }

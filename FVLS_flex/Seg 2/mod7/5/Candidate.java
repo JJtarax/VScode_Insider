@@ -36,13 +36,4 @@ public class Candidate {
     public String toString() {
         return name + " received " + numVotes + " votes.";
     }
-
-    // public static int sumOfVotes(int[] voteAmount) {
-    // int sum = 0;
-
-    // for (int votes : voteAmount) {
-    // sum += votes;
-    // }
-    // return sum;
-    // }
 }
