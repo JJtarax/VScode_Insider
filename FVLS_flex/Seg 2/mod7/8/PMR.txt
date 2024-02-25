@@ -1,0 +1,11 @@
+Project Title: GradeBook
+Purpose of Project: To display the grades of students in a class
+Version/Date: 2/25/2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I was able to see how much i had learned from all the assignmnets
+
+<-s>: Had a little problem changing names and quizes like that but in the end I got it working.
+--------------
+In the future: I will have more confints in my skills

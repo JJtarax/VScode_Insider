@@ -1,0 +1,11 @@
+Project Title: Moive
+Purpose of Project: To list the moives that are saved inside of a arrayList
+Version/Date: 
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I was able to learn about Comparator and Collections
+
+<-s>: I had trouble understanding how to sort them but I got it figured out
+--------------
+In the future: I will be able to sort arrayList easier
