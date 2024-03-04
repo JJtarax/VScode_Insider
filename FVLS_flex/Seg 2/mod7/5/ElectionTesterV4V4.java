@@ -4,9 +4,10 @@
 
 import java.util.ArrayList;
 
-public class ElectionTesterV4V3 {
+public class ElectionTesterV4V4 {
     public static void printArrayOfCadidates(ArrayList<Candidate> candidates, int totalVotes) {
-        for (Candidate candidate : candidates) {
+        for (int i = 0; i < candidates.size(); i++) {
+            Candidate candidate = candidates.get(i);
             float percentVotes = ((float) candidate.getVotes() / totalVotes) * 100;
             if (percentVotes < 10.0 || candidate.getVotes() <= 99.0) {
                 if (percentVotes < 10.0 || candidate.getVotes() <= 99.0) {
@@ -30,7 +31,8 @@ public class ElectionTesterV4V3 {
                             """);
 
         int totalVotes = 0;
-        for (Candidate candidate : candidates) {
+        for (int i = 0; i < candidates.size(); i++) {
+            Candidate candidate = candidates.get(i);
             totalVotes += candidate.getVotes();
         }
 
@@ -51,9 +53,15 @@ public class ElectionTesterV4V3 {
 
     public static void updateNameOfCandidateArrayList(ArrayList<Candidate> candidates, String oldName, String newName) {
         // Changing Bruce Banner to Stan Lee
-        for (Candidate candidate : candidates) {
+        for (int i = 0; i < candidates.size(); i++) {
+            Candidate candidate = candidates.get(i);
             if (candidate.getName().equals(oldName)) {
-                candidate.setName(newName);
+                Candidate newCandidate = new Candidate("", candidate.getVotes());
+                newCandidate.setName(newName);
+
+                candidates.remove(candidate);
+                candidates.add(newCandidate);
+
                 System.out.println(candidate.toString());
             }
         }
@@ -61,7 +69,8 @@ public class ElectionTesterV4V3 {
 
     public static void updateCandidateVotesArray(ArrayList<Candidate> candidates, String targetName, int newVoteCount) {
         // Changing Henry Pym votes to 284
-        for (Candidate candidate : candidates) {
+        for (int i = 0; i < candidates.size(); i++) {
+            Candidate candidate = candidates.get(i);
             if (candidate.getName().equals(targetName)) {
                 candidate.setVotes(newVoteCount);
                 System.out.println(candidate.toString());

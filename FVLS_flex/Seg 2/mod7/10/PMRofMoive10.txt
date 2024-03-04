@@ -1,0 +1,11 @@
+Project Title: Movie V3
+Purpose of Project: To list the an array of movies with their details
+Version/Date: 3/1/2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: The toSting() method for formatted so i didn't really of to have to make a new method and also i was able to use all method and not leave one out
+
+<-s>: I had to transfer from arrayList to array because i didn't pay close attion to the rubic when i was doing 7.9
+--------------
+In the future: I will be able to use in selection in java

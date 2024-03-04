@@ -1,11 +1,38 @@
-/*
- * To display the votes of the election
- * 
- * @author Tejas Upadhyay
- * @version Januray __ 2024
- */
+// Purpose of Project: To list the results of the election
+// Version/Date: 02/09/2023
+// Author: Tejas Upadhyay
+
+import java.util.ArrayList;
+
 public class ElectionTesterV7 {
-    public static void printElectionResults(Candidate[] candidates, int[] votes) {
+
+    public static int sumOfVotesArray(int[] voteAmount) {
+        int sum = 0;
+
+        for (int votes : voteAmount) {
+            sum += votes;
+        }
+        return sum;
+    }
+
+    public static void printArrayOfCadidates(Candidate[] candidates, int totalVotes) {
+        for (Candidate candidate : candidates) {
+
+            float percentVotes = ((float) candidate.getVotes() / totalVotes) * 100;
+
+            if (candidate.getVotes() < 100.0) {
+                System.out.printf("%-22s %-18d %.2f \n", candidate.getName(), candidate.getVotes(),
+                        percentVotes);
+            } else if (percentVotes < 10.0) {
+                System.out.printf("%-21s %-19d %.2f \n", candidate.getName(), candidate.getVotes(),
+                        percentVotes);
+            } else {
+                System.out.printf("%-21s %-18d %.2f \n", candidate.getName(), candidate.getVotes(), percentVotes);
+            }
+        }
+    }
+
+    public static void printArrayOfElectionResults(Candidate[] candidates, int[] votes) {
 
         System.out.print("""
                                      Votes           % of Total
@@ -13,34 +40,22 @@ public class ElectionTesterV7 {
                 ===============================================
                             """);
 
-        int totalVotes = Candidate.sumOfVotes(votes);
+        int totalVotes = sumOfVotesArray(votes);
 
-        for (Candidate candidate : candidates) {
-            float percentVotes = ((float) candidate.getVotes() / totalVotes) * 100;
-            if (percentVotes < 10.0 || candidate.getVotes() <= 99.0) {
-                if (percentVotes < 10.0 || candidate.getVotes() <= 99.0) {
-                    System.out.printf("%-22s %-18d %.2f \n", candidate.getName(), candidate.getVotes(), percentVotes);
-                } else if (candidate.getVotes() < 100.0) {
-                    System.out.printf("%-22s %-18d %.2f \n", candidate.getName(), candidate.getVotes(), percentVotes);
-                } else if (percentVotes < 10.0) {
-                    System.out.printf("%-21s %-19d %.2f \n", candidate.getName(), candidate.getVotes(), percentVotes);
-                }
-            } else {
-                System.out.printf("%-21s %-18d %.2f \n", candidate.getName(), candidate.getVotes(), percentVotes);
-
-            }
-        }
+        printArrayOfCadidates(candidates, totalVotes);
+        // System.out.println(candidates.toString());
 
         System.out.println("\nThe total number of votes is: " + totalVotes);
     }
 
-    public static void removeCandidateByNameArray(Candidate[] candidates, String targetName) {
+    public static Candidate[] removeCandidateByNameArray(Candidate[] candidates, String targetName) {
         for (int i = 0; i < candidates.length; i++) {
             if (candidates[i].getName().equals(targetName)) {
 
                 candidates = removeCandidateByPositionArray(candidates, i);
             }
         }
+        return candidates;
     }
 
     public static Candidate[] removeCandidateByPositionArray(Candidate[] array, int index) {
@@ -98,21 +113,21 @@ public class ElectionTesterV7 {
                 204 };
         int x = names.length;
         Candidate[] candidates = new Candidate[x];
-        // System.out.println(" Raw Election Data:");
+        System.out.println(" Raw Election Data:");
         candidates = createCandidatesArray(names, votes);
 
         System.out.println("Original Results:\n");
-        printElectionResults(candidates, votes);
+        printArrayOfElectionResults(candidates, votes);
 
         candidates = removeCandidateByPositionArray(candidates, 4);
 
         System.out.println("<< Remove 4th position >>\n");
-        printElectionResults(candidates, votes);
+        printArrayOfElectionResults(candidates, votes);
 
-        removeCandidateByNameArray(candidates, "Henry Pym");
+        candidates = removeCandidateByNameArray(candidates, "Henry Pym");
 
         System.out.println("\n\n<< Deleting Henry Pym >>\n");
-        printElectionResults(candidates, votes);
+        printArrayOfElectionResults(candidates, votes);
 
     }
 

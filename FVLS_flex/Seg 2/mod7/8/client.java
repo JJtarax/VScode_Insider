@@ -51,6 +51,8 @@ public class client {
 
         // Loop until the user says no to adding more students
         while (!request.equalsIgnoreCase("5")) {
+            int w = 1;
+
             switch (request) {
                 case "1": // Add a new Student
                     student.addNewStudentToClassList(studentList);
@@ -65,24 +67,28 @@ public class client {
                     student.removeStudentFromArrayList(studentList);
                     break;
                 default:
-                    System.out.println("Bad input recieved! Exiting ...");
-                    return;
+                    System.out.println("Bad input, please type a vaild input.");
+                    w = 0;
+                    break;
             }
 
-            student.studentPrint(studentList);
-            System.out.println("""
+            if (w != 0) {
+                student.studentPrint(studentList);
+                System.out.println("""
 
-                    Please select an option:
+                        Please select an option:
 
-                    1 : Add a new student
-                    2 : Change an existing student's name
-                    3 : Change an existing student's quiz scores
-                    4 : Remove a student
-                    5 : Quit
-                    """);
+                        1 : Add a new student
+                        2 : Change an existing student's name
+                        3 : Change an existing student's quiz scores
+                        4 : Remove a student
+                        5 : Quit
+                        """);
 
+                // in.close();
+            }
             request = in.nextLine();
-            // in.close();
         }
+        System.out.println("Goodbye!");
     }
 }

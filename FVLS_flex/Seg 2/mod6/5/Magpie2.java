@@ -40,10 +40,15 @@ public class Magpie2 {
                 || findKeyword(statement, "grandpa", 0) >= 0
                 || findKeyword(statement, "grandma", 0) >= 0) {
             response = "Tell me more about your family.";
+        } else if (findKeyword(statement, "grandpa", 0) >= 0
+                || findKeyword(statement, "grandma", 0) >= 0) {
+            response = "Tell me more about your grandparents.";
         } else if (findKeyword(statement, "pet", 0) >= 0
                 || findKeyword(statement, "dog", 0) >= 0
                 || findKeyword(statement, "cat", 0) >= 0) {
             response = "Tell me more about your pet.";
+        } else if (findKeyword(statement, "pet", 0) >= 0) {
+            response = "What type of pet are they?";
         } else if (findKeyword(statement, "Mr. Robinson", 0) >= 0) {
             response = "Tell me more about this wonderful teacher.";
         } else if (statement.isEmpty()) {
@@ -74,7 +79,7 @@ public class Magpie2 {
         } else if (whichResponse == 3) {
             response = "You don't say.";
         } else if (whichResponse == 4) {
-            response = "is that so?";
+            response = "Is that so?";
         } else if (whichResponse == 5) {
             response = "I see";
         }

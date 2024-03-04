@@ -1,15 +1,14 @@
-
 /**
- * Purpose: To list the moives that are saved inside of a arrayList
+ * Purpose:
  *
- * @author @Tejas-Upadhyay
- * @version 2/25/2024
+ * @author Tejas Upadhyay
+ * @version 3/1/2024
  *
  */
-public class tester {
+public class MusicTester {
     public static void main(String[] args) {
         // Moive List
-        String[] moivesName = {
+        String[] musicTitle = {
                 "Mean Girls",
                 "The Matrix",
                 "The Grinch",
@@ -20,7 +19,7 @@ public class tester {
                 "Bumblebee",
                 "Oppenheimer",
                 "Wonka" };
-        int[] moivesYear = {
+        int[] musicYear = {
                 2024,
                 1999,
                 2018,
@@ -31,7 +30,7 @@ public class tester {
                 2018,
                 2023,
                 2023 };
-        String[] moivesCompany = {
+        String[] musicArtist = {
                 "Paramount Pictures",
                 "Warner Bros. Pictures",
                 "Universal Pictures",
@@ -44,29 +43,25 @@ public class tester {
                 "Warner Bros. Pictures"
         };
 
-        Movie[] movieArray = combineMovieIntoList(moivesName, moivesYear, moivesCompany);
+        Music[] musicArray = combineSongIntoList(musicTitle, musicYear, musicArtist);
 
         // Print the sorted movies
         System.out.println("\nHere is your list: \n");
-        printAllMovie(movieArray);
+        printAllSong(musicArray);
     }
 
-    public static void sortAllMoviesByYear(Movie[] movieArray) {
-
-    }
-
-    public static Movie[] combineMovieIntoList(String[] moivesName, int[] moivesYear, String[] moivesCompany) {
-        Movie[] moivesList = new Movie[moivesName.length];
-        for (int i = 0; i < moivesName.length; i++) {
-            Movie currentMovie = new Movie(moivesName[i], moivesYear[i], moivesCompany[i]);
-            moivesList[i] = currentMovie;
+    public static Music[] combineSongIntoList(String[] musicTitle, int[] musicYear, String[] musicArtist) {
+        Music[] musicList = new Music[musicTitle.length];
+        for (int i = 0; i < musicTitle.length; i++) {
+            Music currentSong = new Music(musicTitle[i], musicYear[i], musicArtist[i]);
+            musicList[i] = currentSong;
         }
-        return moivesList;
+        return musicList;
     }
 
-    public static void printAllMovie(Movie[] moivesList) {
-        for (Movie movie : moivesList) {
-            System.out.println(movie.toString());
+    public static void printAllSong(Music[] musicList) {
+        for (Music song : musicList) {
+            System.out.println(song.toString());
         }
     }
 }

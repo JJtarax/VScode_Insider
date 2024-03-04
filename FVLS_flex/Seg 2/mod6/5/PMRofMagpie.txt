@@ -1,0 +1,11 @@
+Project Title: Magpie part 1
+Purpose of Project: 
+Version/Date: 2/25/2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: got a little more knowledgewith chatbots
+
+<-s>: I had a little trouble in the worksheet but after asking my dad I got it
+--------------
+In the future: I will know how chatbots work and more about findKeyword

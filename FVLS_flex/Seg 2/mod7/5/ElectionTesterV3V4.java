@@ -2,7 +2,7 @@
 // Version/Date: 02/09/2023
 // Author: Tejas Upadhyay
 
-public class ElectionTesterV3V3 {
+public class ElectionTesterV3V4 {
 
     public static int sumOfVotesArray(int[] voteAmount) {
         int sum = 0;
@@ -42,17 +42,22 @@ public class ElectionTesterV3V3 {
         int totalVotes = sumOfVotesArray(votes);
 
         printArrayOfCadidates(candidates, totalVotes);
+        // System.out.println(candidates.toString());
 
         System.out.println("\nThe total number of votes is: " + totalVotes);
     }
 
     public static void updateNameOfCandidateArray(Candidate[] candidates, String oldName, String newName) {
+        int i = 0;
         for (Candidate candidate : candidates) {
 
             if (candidate.getName().equals(oldName)) {
-                candidate.setName(newName);
+                Candidate newCandidate = new Candidate("", candidate.getVotes());
+                candidates[i] = newCandidate;
+                newCandidate.setName(newName);
                 System.out.println(candidate.toString());
             }
+            i++;
         }
     }
 
@@ -88,7 +93,7 @@ public class ElectionTesterV3V3 {
         int[] votes = { 751, 496, 303, 225, 81 };
         int j = names.length;
         Candidate[] candidates = new Candidate[j];
-        // System.out.println(" Raw Election Data:");
+        System.out.println(" Raw Election Data:");
         candidates = createCandidatesArray(names, votes);
 
         System.out.println("Original Results:\n");
