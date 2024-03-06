@@ -1,8 +1,8 @@
-import java.util.*;
+// import java.util.*;
 
-public class Tester {
+public class contactTester {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        // Scanner in = new Scanner(System.in);
         String[] name = {
                 "Diana Prince",
                 "Bruce Wayne",
@@ -70,80 +70,36 @@ public class Tester {
                 "kratos@gods.net"
         };
 
-        Contacts[] contactArray = Contacts(name, relation, birthMonth, birthDay, phoneNumber, email);
-
+        Contacts[] contactArray = combineContactsIntoList(name, relation, birthMonth, birthDay, phoneNumber, email);
         // Print the sorted movies
         System.out.println("\nHere is your list: \n");
-        printAllSong(contactsArray);
+        printAllSong(contactArray);
     }
 
-    public static void sortByContactsYear(Contacts[] ContactsArray) {
-        int n = ContactsArray.length;
+    public static Contacts[] combineContactsIntoList(String[] name, String[] relation, String[] month, int[] birthDay,
+            String[] phoneNumber, String[] email) {
+        Contacts[] contactsArray = new Contacts[name.length];
+        for (int i = 0; i < name.length; i++) {
+            contactsArray[i] = new Contacts(name[i], relation[i], month[i], birthDay[i], phoneNumber[i], email[i]);
+        }
+        return contactsArray;
+    }
 
+    public static void sortByMusicArtist(Contacts[] contactArray) {
+        int n = contactArray.length;
         // One by one move boundary of unsorted subarray
         for (int i = 0; i < n - 1; i++) {
             // Find the minimum element in unsorted array
             int min_idx = i;
             for (int j = i + 1; j < n; j++)
-                if (ContactsArray[j].getYear() < ContactsArray[min_idx].getYear())
+                if (contactArray[j].getName().compareTo(contactArray[min_idx].getName()) < -0)
                     min_idx = j;
 
             // Swap the found minimum element with the first
-            // element
-            Contacts temp = ContactsArray[min_idx];
-            ContactsArray[min_idx] = ContactsArray[i];
-            ContactsArray[i] = temp;
+            Contacts temp = contactArray[min_idx];
+            contactArray[min_idx] = contactArray[i];
+            contactArray[i] = temp;
         }
-    }
-
-    public static void sortByContactsTitle(Contacts[] ContactsArray) {
-        int n = ContactsArray.length;
-
-        // One by one move boundary of unsorted subarray
-        for (int i = 0; i < n - 1; i++) {
-            // Find the minimum element in unsorted array
-            int min_idx = i;
-            for (int j = i + 1; j < n; j++)
-                if (ContactsArray[j].getTitle().compareTo(ContactsArray[min_idx].getTitle()) < 0)
-                    min_idx = j;
-
-            // Swap the found minimum element with the first
-            // element
-            Contacts temp = ContactsArray[min_idx];
-            ContactsArray[min_idx] = ContactsArray[i];
-            ContactsArray[i] = temp;
-        }
-
-    }
-
-    public static void sortByContactsArtist(Contacts[] ContactsArray) {
-        int n = ContactsArray.length;
-        // One by one move boundary of unsorted subarray
-        for (int i = 0; i < n - 1; i++) {
-            // Find the minimum element in unsorted array
-            int min_idx = i;
-            for (int j = i + 1; j < n; j++)
-                if (ContactsArray[j].getArtist().compareTo(ContactsArray[min_idx].getArtist()) < -0)
-                    min_idx = j;
-
-            // Swap the found minimum element with the first
-            Contacts temp = ContactsArray[min_idx];
-            ContactsArray[min_idx] = ContactsArray[i];
-            ContactsArray[i] = temp;
-        }
-    }
-
-    public static void binarySearchByYear(Contacts[] ContactsArray, int targetYear) {
-
-    }
-
-    public static Contacts[] combineSongIntoList(String[] ContactsTitle, int[] ContactsYear, String[] ContactsArtist) {
-        Contacts[] ContactsList = new Contacts[ContactsTitle.length];
-        for (int i = 0; i < ContactsTitle.length; i++) {
-            Contacts currentSong = new Contacts(ContactsTitle[i], ContactsYear[i], ContactsArtist[i]);
-            ContactsList[i] = currentSong;
-        }
-        return ContactsList;
     }
 
     public static void printAllSong(Contacts[] ContactsList) {

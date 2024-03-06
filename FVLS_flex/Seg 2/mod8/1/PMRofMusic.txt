@@ -1,0 +1,11 @@
+Project Title: MusicTester & MusicTesterV1
+Purpose of Project: To search from an list of music
+Version/Date: 3/3/2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: Thanks to the moive assigment I knew how to make most of the assigment. THe only thing that was different was the method
+
+<-s>: Converting the snippet of code that I was given into code that will work
+--------------
+In the future: I will be able to use Sequential Search in my future assigments.

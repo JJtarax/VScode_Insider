@@ -1,0 +1,11 @@
+Project Title: Magpie Part 2
+Purpose of Project: 
+Version/Date: 3/3/24
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: This one was easy thanks to the last few assignments that I had done
+
+<-s>: I don't have anyting that i did here i had either had a hard time doing or didn't understand when i was doing it.
+--------------
+In the future: I will be able to do these magpie easily
