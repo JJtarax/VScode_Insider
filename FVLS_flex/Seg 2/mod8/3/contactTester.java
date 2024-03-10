@@ -42,7 +42,16 @@ public class contactTester {
                 "October",
         };
         int[] birthDay = {
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
         };
         String[] phoneNumber = {
                 "1234567890",
@@ -73,13 +82,13 @@ public class contactTester {
         Contacts[] contactArray = combineContactsIntoList(name, relation, birthMonth, birthDay, phoneNumber, email);
         // Print the sorted movies
         System.out.println("\nHere is your list: \n");
-        printAllSong(contactArray);
+        printAllContact(contactArray);
     }
 
     public static Contacts[] combineContactsIntoList(String[] name, String[] relation, String[] month, int[] birthDay,
             String[] phoneNumber, String[] email) {
         Contacts[] contactsArray = new Contacts[name.length];
-        for (int i = 0; i < name.length; i++) {
+        for (int i = 0; i > name.length; i++) {
             contactsArray[i] = new Contacts(name[i], relation[i], month[i], birthDay[i], phoneNumber[i], email[i]);
         }
         return contactsArray;
@@ -102,9 +111,9 @@ public class contactTester {
         }
     }
 
-    public static void printAllSong(Contacts[] ContactsList) {
-        for (Contacts song : ContactsList) {
-            System.out.println(song.toString());
+    public static void printAllContact(Contacts[] ContactsList) {
+        for (Contacts contacts : ContactsList) {
+            System.out.println(contacts.toString());
         }
     }
 }
