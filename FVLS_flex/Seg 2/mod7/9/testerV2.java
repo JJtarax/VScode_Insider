@@ -24,69 +24,78 @@ public class testerV2 {
 
         System.out.println("Here is your list");
         System.out.println("\nHere is your list sorted by title in descending order:\n");
-        sortByMovieTitle(movieList, true);
+        insertionSortByTitle(movieList, 1);
         printAllMovie(movieList);
 
         System.out.println("\nHere is your list sorted by title in ascending order:\n");
-        sortByMovieTitle(movieList, false);
+        insertionSortByTitle(movieList, 2);
         printAllMovie(movieList);
 
         System.out.println("\nHere is your list sorted by year in descending order:\n");
-        sortByMovieYear(movieList, true);
+        insertionSortByYear(movieList, 1);
         printAllMovie(movieList);
 
         System.out.println("\nHere is your list sorted by year in ascending order:\n");
-        sortByMovieYear(movieList, false);
+        insertionSortByYear(movieList, 2);
         printAllMovie(movieList);
 
         System.out.println("\nHere is your list sorted by studio in descending order:\n");
-        sortByMovieStudio(movieList, true);
+        insertionSortByStudio(movieList, 1);
         printAllMovie(movieList);
 
         System.out.println("\nHere is your list sorted by studio in ascending order:\n");
-        sortByMovieStudio(movieList, false);
+        insertionSortByStudio(movieList, false);
         printAllMovie(movieList);
     }
 
-    public static void sortByMovieYear(ArrayList<Movie> movieList, boolean descending) {
-        int n = movieList.size();
-        for (int i = 1; i < n; ++i) {
-            Movie key = movieList.get(i);
-            int j = i - 1;
-            while (j >= 0 && (descending ? movieList.get(j).getYear() < key.getYear()
-                    : movieList.get(j).getYear() > key.getYear())) {
-                movieList.set(j + 1, movieList.get(j));
-                j = j - 1;
+    public static void insertionSortByYear(ArrayList<Movie> source, ArrayList<Movie> dest) {
+        for (int i = 0; i < source.size(); i++) {
+            Movie next = source.get(i);
+            int insertIndex = 0;
+            int k = i;
+            while (k > 0 && insertIndex == 0) {
+                if (next.getYear() > dest.get(k - 1).getYear()) {
+                    insertIndex = k;
+                } else {
+                    dest.set(k, dest.get(k - 1));
+                    k--;
+                }
             }
-            movieList.set(j + 1, key);
+            dest.set(insertIndex, next);
         }
     }
 
-    public static void sortByMovieTitle(ArrayList<Movie> movieList, boolean descending) {
-        int n = movieList.size();
-        for (int i = 1; i < n; ++i) {
-            Movie key = movieList.get(i);
-            int j = i - 1;
-            while (j >= 0 && (descending ? movieList.get(j).getTitle().compareTo(key.getTitle()) < 0
-                    : movieList.get(j).getTitle().compareTo(key.getTitle()) > 0)) {
-                movieList.set(j + 1, movieList.get(j));
-                j = j - 1;
+    public static void insertionSortByTitle(ArrayList<Movie> source, ArrayList<Movie> dest) {
+        for (int i = 0; i < source.size(); i++) {
+            Movie next = source.get(i);
+            int insertIndex = 0;
+            int k = i;
+            while (k > 0 && insertIndex == 0) {
+                if (next.getTitle().compareTo(dest.get(k - 1).getTitle()) > 0) {
+                    insertIndex = k;
+                } else {
+                    dest.set(k, dest.get(k - 1));
+                    k--;
+                }
             }
-            movieList.set(j + 1, key);
+            dest.set(insertIndex, next);
         }
     }
 
-    public static void sortByMovieStudio(ArrayList<Movie> movieList, boolean descending) {
-        int n = movieList.size();
-        for (int i = 1; i < n; ++i) {
-            Movie key = movieList.get(i);
-            int j = i - 1;
-            while (j >= 0 && (descending ? movieList.get(j).getStudio().compareTo(key.getStudio()) < 0
-                    : movieList.get(j).getStudio().compareTo(key.getStudio()) > 0)) {
-                movieList.set(j + 1, movieList.get(j));
-                j = j - 1;
+    public static void insertionSortByStudio(ArrayList<Movie> source, ArrayList<Movie> dest) {
+        for (int i = 0; i < source.size(); i++) {
+            Movie next = source.get(i);
+            int insertIndex = 0;
+            int k = i;
+            while (k > 0 && insertIndex == 0) {
+                if (next.getStudio().compareTo(dest.get(k - 1).getStudio()) > 0) {
+                    insertIndex = k;
+                } else {
+                    dest.set(k, dest.get(k - 1));
+                    k--;
+                }
             }
-            movieList.set(j + 1, key);
+            dest.set(insertIndex, next);
         }
     }
 

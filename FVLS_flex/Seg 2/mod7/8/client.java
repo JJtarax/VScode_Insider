@@ -53,23 +53,17 @@ public class client {
         while (!request.equalsIgnoreCase("5")) {
             int w = 1;
 
-            switch (request) {
-                case "1": // Add a new Student
-                    student.addNewStudentToClassList(studentList);
-                    break;
-                case "2": // Change an existing student's name
-                    student.updateNameOfStudentArrayList(studentList);
-                    break;
-                case "3": // Change an existing student's quiz score
-                    student.updateQuizScoreOfStudentArrayList(studentList);
-                    break;
-                case "4": // Remove a student
-                    student.removeStudentFromArrayList(studentList);
-                    break;
-                default:
-                    System.out.println("Bad input, please type a vaild input.");
-                    w = 0;
-                    break;
+            if (request.equalsIgnoreCase("1"))
+                student.addNewStudentToClassList(studentList);
+            if (request.equalsIgnoreCase("2"))
+                student.updateNameOfStudentArrayList(studentList);
+            if (request.equalsIgnoreCase("3"))
+                student.updateQuizScoreOfStudentArrayList(studentList);
+            if (request.equalsIgnoreCase("4"))
+                student.removeStudentFromArrayList(studentList);
+            else {
+                System.out.println("Invalid input. Please try again.");
+                return;
             }
 
             if (w != 0) {
