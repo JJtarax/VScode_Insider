@@ -16,7 +16,7 @@ public class testerV2 {
         movieList.add(new Movie("The Grinch", 2018, "Universal Pictures"));
         movieList.add(new Movie("Avengers: Endgame", 2019, "Marvel Studios"));
         movieList.add(new Movie("The Dark Knight", 2008, "Warner Bros."));
-        movieList.add(new Movie("Meet the Robinsons", 2008, "20th Century Fox"));
+        movieList.add(new Movie("Meet the Robinsons", 2008, "Disney"));
         movieList.add(new Movie("Transformers", 2007, "Paramount Pictures"));
         movieList.add(new Movie("Bumblebee", 2018, "Paramount Pictures"));
         movieList.add(new Movie("Oppenheimer", 2023, "Universal Pictures"));
