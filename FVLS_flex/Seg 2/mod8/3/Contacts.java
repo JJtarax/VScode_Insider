@@ -59,8 +59,11 @@ public class Contacts {
     }
 
     public String toString() {
-        String str = String.format("%-25s %-20s %-10s %-5d %-15s %-20s", name, relation, birthmonth, birthDay,
-                phoneNumber, email);
-        return str;
+        // String str = String.format("%-25s %-20s %-10s %-5d %-15s %-20s", name,
+        // relation, birthmonth, birthDay,
+        // phoneNumber, email);
+        // return str;
+
+        return "Tejas";
     }
 }

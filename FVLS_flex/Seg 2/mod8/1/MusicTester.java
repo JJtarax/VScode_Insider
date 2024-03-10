@@ -9,38 +9,43 @@ public class MusicTester {
     public static void main(String[] args) {
         // Moive List
         String[] musicTitle = {
-                "Mean Girls",
-                "The Matrix",
-                "The Grinch",
-                "Avengers: Endgame",
-                "The Dark Knight",
-                "Meet the Robinsons",
-                "Transformers",
-                "Bumblebee",
-                "Oppenheimer",
-                "Wonka" };
+                "Seven Nation Army",
+                "Beggin'",
+                "Alors on danse",
+                "Paint it, Black",
+                "Fairy Tale",
+                "Rasputin",
+                "bad guy",
+                "Skyfall",
+                "Human",
+                "Careless Whisper",
+                "I Will Survive"
+        };
         int[] musicYear = {
-                2024,
-                1999,
-                2018,
+                2003,
+                2007,
+                2009,
+                1966,
+                2009,
+                1978,
                 2019,
-                2008,
-                2007,
-                2007,
-                2018,
-                2023,
-                2023 };
+                2012,
+                2016,
+                1984,
+                1978
+        };
         String[] musicArtist = {
-                "Paramount Pictures",
-                "Warner Bros. Pictures",
-                "Universal Pictures",
-                "Marvel Studios",
-                "Warner Bros. Pictures",
-                "Disney",
-                "Paramount Pictures",
-                "Paramount Pictures",
-                "Univeral Pictures",
-                "Warner Bros. Pictures"
+                "The White Stripes",
+                "Madcon",
+                "Stromae",
+                "The Rolling Stones",
+                "Alexander Rybak",
+                "Boney M.",
+                "Billie Eilish",
+                "Adele",
+                "Rag'n'Bone Man",
+                "George Michael",
+                "Gloria Gaynor"
         };
 
         Music[] musicArray = combineSongIntoList(musicTitle, musicYear, musicArtist);

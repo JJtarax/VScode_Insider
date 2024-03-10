@@ -1,3 +1,4 @@
+
 /**
  * Purpose:
  *
@@ -5,6 +6,9 @@
  * @version 3/1/2024
  *
  */
+
+import java.util.Scanner;
+
 public class MusicTesterV2 {
     public static void main(String[] args) {
         // Moive List
@@ -53,6 +57,31 @@ public class MusicTesterV2 {
         // Print the sorted movies
         System.out.println("\nHere is your list: \n");
         printAllSong(musicArray);
+
+        System.out.println("\nWhat are you searching for?");
+        System.out.println("1. Year");
+        System.out.println("2. Title");
+        System.out.println("3. Artist");
+        Scanner input = new Scanner(System.in);
+        int choice = input.nextInt();
+
+        if (choice == 1) {
+            System.out.println("What year are you looking for?");
+            int year = input.nextInt();
+            sortByMusicYear(musicArray);
+            binarySearchByYear(musicArray, year);
+        } else if (choice == 2) {
+            System.out.println("What title are you looking for?");
+            String title = input.next();
+            sortByMusicTitle(musicArray);
+            binarySearchByTitle(musicArray, title);
+        } else if (choice == 3) {
+            System.out.println("What artist are you looking for?");
+            String artist = input.next();
+            sortByMusicArtist(musicArray);
+            binarySearchByArtist(musicArray, artist);
+        }
+
     }
 
     public static void sortByMusicYear(Music[] musicArray) {
@@ -112,7 +141,75 @@ public class MusicTesterV2 {
     }
 
     public static void binarySearchByYear(Music[] musicArray, int targetYear) {
+        int high = musicArray.length;
+        int low = -1;
+        int probe;
 
+        while (high - low > 1) {
+            probe = (high + low) / 2;
+
+            if (musicArray[probe].getYear() > targetYear)
+                high = probe;
+            else {
+                low = probe;
+                if (musicArray[probe].getYear() == targetYear) {
+                    break;
+                }
+            }
+        }
+
+        if ((low >= 0) && (musicArray[low].getYear() == targetYear)) {
+            System.out.println("Found: " + musicArray[low].toString());
+        } else
+            System.out.println("NOT found: " + targetYear);
+    }
+
+    public static void binarySearchByTitle(Music[] musicArray, String targetTitle) {
+        int high = musicArray.length;
+        int low = -1;
+        int probe;
+
+        while (high - low > 1) {
+            probe = (high + low) / 2;
+
+            if (musicArray[probe].getTitle().compareTo(targetTitle) > 0)
+                high = probe;
+            else {
+                low = probe;
+                if (musicArray[probe].getTitle().compareTo(targetTitle) == 0) {
+                    break;
+                }
+            }
+        }
+
+        if ((low >= 0) && (musicArray[low].getTitle().compareTo(targetTitle) == 0)) {
+            System.out.println("Found: " + musicArray[low].toString());
+        } else
+            System.out.println("NOT found: " + targetTitle);
+    }
+
+    public static void binarySearchByArtist(Music[] musicArray, String targetArtist) {
+        int high = musicArray.length;
+        int low = -1;
+        int probe;
+
+        while (high - low > 1) {
+            probe = (high + low) / 2;
+
+            if (musicArray[probe].getArtist().compareTo(targetArtist) > 0)
+                high = probe;
+            else {
+                low = probe;
+                if (musicArray[probe].getArtist().compareTo(targetArtist) == 0) {
+                    break;
+                }
+            }
+        }
+
+        if ((low >= 0) && (musicArray[low].getArtist().compareTo(targetArtist) == 0)) {
+            System.out.println("Found: " + musicArray[low].toString());
+        } else
+            System.out.println("NOT found: " + targetArtist);
     }
 
     public static Music[] combineSongIntoList(String[] musicTitle, int[] musicYear, String[] musicArtist) {

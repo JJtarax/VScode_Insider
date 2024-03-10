@@ -61,7 +61,6 @@ public class MusicTesterV1 {
         System.out.println("2. Song year");
         System.out.println("3. Song artist");
         int search = in.nextInt();
-        in.close();
         if (search == 1) {
             System.out.println("What song title do you want to search for?");
             String title = in.next();
@@ -79,6 +78,7 @@ public class MusicTesterV1 {
         // Print the sorted movies
         // System.out.println("\nHere is your list: \n");
         // printAllSong(musicArray);
+        in.close();
     }
 
     public static void sequentialSearchByTitle(Music[] r, String toFind) {

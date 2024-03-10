@@ -40,6 +40,7 @@ public class contactTester {
                 "August",
                 "September",
                 "October",
+                "November"
         };
         int[] birthDay = {
                 1,
@@ -51,7 +52,8 @@ public class contactTester {
                 7,
                 8,
                 9,
-                10
+                10,
+                11
         };
         String[] phoneNumber = {
                 "1234567890",
@@ -64,6 +66,7 @@ public class contactTester {
                 "1122334455",
                 "636464820",
                 "1029384756",
+                "1029384757"
         };
         String[] email = {
                 "wonderwoman@theamazon.net",
