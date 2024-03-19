@@ -7,51 +7,12 @@ import java.util.*;
  * @version 3/1/2024
  *
  */
-public class MusicTesterV1 {
+public class MusicTesterV1V3 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         // Moive List
-        String[] musicTitle = {
-                "Seven Nation Army",
-                "Beggin'",
-                "Alors on danse",
-                "Paint it, Black",
-                "Fairy Tale",
-                "Rasputin",
-                "bad guy",
-                "Skyfall",
-                "Human",
-                "Careless Whisper",
-                "I Will Survive"
-        };
-        int[] musicYear = {
-                2003,
-                2007,
-                2009,
-                1966,
-                2009,
-                1978,
-                2019,
-                2012,
-                2016,
-                1984,
-                1978
-        };
-        String[] musicArtist = {
-                "The White Stripes",
-                "Madcon",
-                "Stromae",
-                "The Rolling Stones",
-                "Alexander Rybak",
-                "Boney M.",
-                "Billie Eilish",
-                "Adele",
-                "Rag'n'Bone Man",
-                "George Michael",
-                "Gloria Gaynor"
-        };
-
-        Music[] musicArray = combineSongIntoList(musicTitle, musicYear, musicArtist);
+        Music[] musicArray = new Music[10];
+        createSongIntoList(musicArray);
 
         System.out.println("\nHere is your list: \n");
         printAllSong(musicArray);
@@ -61,9 +22,11 @@ public class MusicTesterV1 {
         System.out.println("2. Song year");
         System.out.println("3. Song artist");
         int search = in.nextInt();
+
         if (search == 1) {
             System.out.println("What song title do you want to search for?");
-            String title = in.next();
+            in.nextLine();
+            String title = in.nextLine();
             sequentialSearchByTitle(musicArray, title);
         } else if (search == 2) {
             System.out.println("What year do you want to search for?");
@@ -71,7 +34,8 @@ public class MusicTesterV1 {
             sequentialSearchByYear(musicArray, year);
         } else if (search == 3) {
             System.out.println("What artist do you want to search for?");
-            String artist = in.next();
+            in.nextLine();
+            String artist = in.nextLine();
             sequentialSearchByArtist(musicArray, artist);
         }
 
@@ -133,13 +97,18 @@ public class MusicTesterV1 {
             System.out.println(toFind + " is not in the list");
     }
 
-    public static Music[] combineSongIntoList(String[] musicTitle, int[] musicYear, String[] musicArtist) {
-        Music[] musicList = new Music[musicTitle.length];
-        for (int i = 0; i < musicTitle.length; i++) {
-            Music currentSong = new Music(musicTitle[i], musicYear[i], musicArtist[i]);
-            musicList[i] = currentSong;
-        }
-        return musicList;
+    public static void createSongIntoList(Music[] musicArray) {
+        musicArray[0] = new Music("Seven Nation Army", 2003, "The White Stripes");
+        musicArray[1] = new Music("Beggin'", 2007, "Madcon");
+        musicArray[2] = new Music("Alors on danse", 2009, "Stromae");
+        musicArray[3] = new Music("Paint it, Black", 1966, "The Rolling Stones");
+        musicArray[4] = new Music("Fairy Tale", 2009, "Alexander Rybak");
+        musicArray[5] = new Music("Rasputin", 1978, "Boney M.");
+        musicArray[6] = new Music("bad guy", 2019, "Billie Eilish");
+        musicArray[7] = new Music("Skyfall", 2012, "Adele");
+        musicArray[8] = new Music("Human", 2016, "Rag'n'Bone Man");
+        musicArray[9] = new Music("Careless Whisper", 1984, "George Michael");
+
     }
 
     public static void printAllSong(Music[] musicList) {

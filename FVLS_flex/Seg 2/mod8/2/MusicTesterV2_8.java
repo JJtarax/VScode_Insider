@@ -7,52 +7,12 @@
  *
  */
 
-import java.util.Scanner;
+public class MusicTesterV2_8 {
 
-public class MusicTesterV2 {
     public static void main(String[] args) {
         // Moive List
-        String[] musicTitle = {
-                "Seven Nation Army",
-                "Beggin'",
-                "Alors on danse",
-                "Paint it, Black",
-                "Fairy Tale",
-                "Rasputin",
-                "bad guy",
-                "Skyfall",
-                "Human",
-                "Careless Whisper",
-                "I Will Survive"
-        };
-        int[] musicYear = {
-                2003,
-                2007,
-                2009,
-                1966,
-                2009,
-                1978,
-                2019,
-                2012,
-                2016,
-                1984,
-                1978
-        };
-        String[] musicArtist = {
-                "The White Stripes",
-                "Madcon",
-                "Stromae",
-                "The Rolling Stones",
-                "Alexander Rybak",
-                "Boney M.",
-                "Billie Eilish",
-                "Adele",
-                "Rag'n'Bone Man",
-                "George Michael",
-                "Gloria Gaynor",
-        };
-
-        Music[] musicArray = combineSongIntoList(musicTitle, musicYear, musicArtist);
+        Music[] musicArray = new Music[10];
+        createSongIntoList(musicArray);
 
         // Print the sorted movies
         System.out.println("\nHere is your list: \n");
@@ -62,24 +22,27 @@ public class MusicTesterV2 {
         System.out.println("1. Year");
         System.out.println("2. Title");
         System.out.println("3. Artist");
-        Scanner input = new Scanner(System.in);
-        int choice = input.nextInt();
 
-        if (choice == 1) {
-            System.out.println("What year are you looking for?");
-            int year = input.nextInt();
-            sortByMusicYear(musicArray);
-            binarySearchByYear(musicArray, year);
-        } else if (choice == 2) {
-            System.out.println("What title are you looking for?");
-            String title = input.next();
-            sortByMusicTitle(musicArray);
-            binarySearchByTitle(musicArray, title);
-        } else if (choice == 3) {
-            System.out.println("What artist are you looking for?");
-            String artist = input.next();
-            sortByMusicArtist(musicArray);
-            binarySearchByArtist(musicArray, artist);
+        for (int i = 0; i < 4; i++) {
+            if (i == 1) {
+                System.out.println("What year are you looking for?");
+                int year = 2009;
+                System.out.println(year);
+                sortByMusicYear(musicArray);
+                binarySearchByYear(musicArray, year);
+            } else if (i == 2) {
+                System.out.println("What title are you looking for?");
+                String title = "Beggin'";
+                System.out.println(title);
+                sortByMusicTitle(musicArray);
+                binarySearchByTitle(musicArray, title);
+            } else if (i == 3) {
+                System.out.println("What artist are you looking for?");
+                String artist = "Madcon";
+                System.out.println(artist);
+                sortByMusicArtist(musicArray);
+                binarySearchByArtist(musicArray, artist);
+            }
         }
 
     }
@@ -212,13 +175,18 @@ public class MusicTesterV2 {
             System.out.println("NOT found: " + targetArtist);
     }
 
-    public static Music[] combineSongIntoList(String[] musicTitle, int[] musicYear, String[] musicArtist) {
-        Music[] musicList = new Music[musicTitle.length];
-        for (int i = 0; i < musicTitle.length; i++) {
-            Music currentSong = new Music(musicTitle[i], musicYear[i], musicArtist[i]);
-            musicList[i] = currentSong;
-        }
-        return musicList;
+    public static void createSongIntoList(Music[] musicArray) {
+        musicArray[0] = new Music("Seven Nation Army", 2003, "The White Stripes");
+        musicArray[1] = new Music("Beggin'", 2007, "Madcon");
+        musicArray[2] = new Music("Alors on danse", 2009, "Stromae");
+        musicArray[3] = new Music("Paint it, Black", 1966, "The Rolling Stones");
+        musicArray[4] = new Music("Fairy Tale", 2009, "Alexander Rybak");
+        musicArray[5] = new Music("Rasputin", 1978, "Boney M.");
+        musicArray[6] = new Music("bad guy", 2019, "Billie Eilish");
+        musicArray[7] = new Music("Skyfall", 2012, "Adele");
+        musicArray[8] = new Music("Human", 2016, "Rag'n'Bone Man");
+        musicArray[9] = new Music("Careless Whisper", 1984, "George Michael");
+
     }
 
     public static void printAllSong(Music[] musicList) {

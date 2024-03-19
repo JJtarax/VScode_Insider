@@ -1,0 +1,12 @@
+Project Title: Contact
+Purpose of Project: To listen family contacts and store them in a file
+Version/Date: 3/10/2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I have a better understanding of how to use binary search with sort and sequential search
+
+<-s>: While I was doing this I used > instead of < (I forgot where I did this), but after a good hour or two I able to find it and fix it.
+--------------
+In the future: I will be able to use binary search and sequential search better in future projects and use right compare symbol (<,>)
+

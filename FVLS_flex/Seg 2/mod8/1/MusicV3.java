@@ -6,14 +6,14 @@
  * @version 3/1/2024
  *
  */
-public class Music {
+public class MusicV3 {
     // instance variables
     private int year;
     private String title;
     private String artist;
 
     // Constructor for objects of class Music
-    public Music(String t, int y, String a) {
+    public MusicV3(String t, int y, String a) {
         // initialize instance variables
         title = t;
         year = y;

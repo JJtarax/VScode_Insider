@@ -1,8 +1,3 @@
-/*
- * Purpose of Project: To listen family contacts and store them in a file
- * Version/Date: 3/10/2024
- * Author: Tejas Upadhyay
- */
 public class Contacts {
     private String name;
     private String relation;

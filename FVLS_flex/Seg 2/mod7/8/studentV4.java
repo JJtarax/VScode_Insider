@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class student {
+public class studentV4 {
 	private String firstName;
 	private String lastName;
 	private int[] quizScores;
 
 	// Constructor
-	public student(String firstName, String lastName) {
+	public studentV4(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.quizScores = new int[5];
@@ -35,6 +35,13 @@ public class student {
 
 	// Getter for student name
 	public String getFullName() {
+
+		String name = studentV4.getFullName(firstName, lastName);
+
+		return name;
+	}
+
+	public static String getFullName(String firstName, String lastName) {
 		String name = firstName + " " + lastName;
 
 		if (firstName.length() == 11) {
@@ -54,15 +61,15 @@ public class student {
 
 	// toString method to print student information
 	public String toString() {
-		return firstName + " " + lastName + " Quiz Scores: " + Arrays.toString(quizScores);
+		return firstName + " " + lastName + " Quiz Scores: " + Arrays.toString(quizScores) + "\n";
 	}
 
-	public static void studentPrint(ArrayList<student> studentList) {
+	public static void studentPrint(ArrayList<studentV4> studentList) {
 		// Print out the headers for the table
 		System.out.println("Student name\t Q1\tQ2\tQ3\tQ4\tQ5");
 		System.out.println("----------------------------------------------------");
 		// Loop through the ArrayLists and print out the data for each student
-		for (student currentStudent : studentList) {
+		for (studentV4 currentStudent : studentList) {
 			System.out.printf("%-16s %-6d %-7d %-7d %-7d %-7d%n",
 					currentStudent.getFullName(),
 					currentStudent.getQuizScore(1),
@@ -73,16 +80,10 @@ public class student {
 		}
 	}
 
-	public static void addNewStudentToClassList(ArrayList<student> studentList) {
+	public static void addNewStudentToClassList(ArrayList<studentV4> studentList, String firstName, String lastName) {
 
-		Scanner in = new Scanner(System.in);
-		// Get the student's first and last name
-		System.out.println("What is the student's first name?");
-		String fName = in.nextLine();
-		System.out.println("What is the student's last name?");
-		String lName = in.nextLine();
-		String name = fName + " " + lName;
-		student Currentstudent = new student(fName, lName);
+		String name = firstName + " " + lastName;
+		studentV4 Currentstudent = new studentV4(firstName, lastName);
 
 		// if name to long then the formating of the table that is printed is weird
 		if (name.length() > 14) {
@@ -93,80 +94,80 @@ public class student {
 
 		int input = 0;
 		// Get the student's grades
-		System.out.println("Enter the grades for " + name + ":");
 		for (int i = 1; i < 6; i++) {
-			System.out.print("q" + i + ": ");
-			input = in.nextInt();
+			input = (int) (Math.random() * 101);
+			// System.out.println("Q" + i + ": " + input);
 			Currentstudent.setQuizScore(i, input);
 		}
 	}
 
-	public static void updateNameOfStudentArrayList(ArrayList<student> studentList) {
-		// Changing Bruce Banner to Stan Lee
-		Scanner in = new Scanner(System.in);
-		// Get the student's first and last name
-		System.out.println("What is the name of student that name you want to change?");
-		System.out.println("What is the student's first name?");
-		String fName = in.next();
-		System.out.println("What is the student's last name?");
-		String lName = in.next();
-		String name = formatName(fName, lName);
-
-		System.out.println("What should the name of the student be?");
-		System.out.println("What is the student's first name?");
-		String newFirstName = in.next();
-		System.out.println("What is the student's last name?");
-		String newLastName = in.next();
-
-		for (student students : studentList) {
-			if (students.getFullName().equals(name)) {
+	public static void updateNameOfStudentArrayList(ArrayList<studentV4> studentList, String oldName,
+			String newFirstName, String newLastName) {
+		for (studentV4 students : studentList) {
+			if (students.getFullName().equals(oldName)) {
 				students.setFullName(newFirstName, newLastName);
-				// System.out.println(studentList.toString());
+				studentList.toString();
 			}
 		}
 	}
 
-	public static void updateQuizScoreOfStudentArrayList(ArrayList<student> studentList) {
-		Scanner in = new Scanner(System.in);
+	public static void updateQuizScoreOfStudentArrayList(ArrayList<studentV4> studentList, String firstName,
+			String lastName, int option) {
 		// Get the student's first and last name
-		System.out.println("What is the name of student that you want to change?");
-		System.out.println("\tWhat is the student's first name?");
-		String fName = in.next();
-		System.out.println("\tWhat is the student's last name?");
-		String lName = in.next();
-		String name = formatName(fName, lName);
+		String name = formatName(firstName, lastName);
 
-		System.out.println("Do you want to change all of his quiz scores or only one? (all/one)");
-		String wasd = in.next();
-
-		if (wasd.equals("all")) {
-			for (student students : studentList) {
+		if (option == 1) {
+			for (studentV4 students : studentList) {
 				if (students.getFullName().equals(name)) {
 					for (int i = 1; i <= 5; i++) {
-						System.out.print("Q" + i + ": \n");
-						int newQuizScore = in.nextInt();
+						int newQuizScore = (int) (Math.random() * 101);
+						// System.out.print("Q" + i + ": " + newQuizScore + "\n");
 						students.setQuizScore(i, newQuizScore);
-						// System.out.println(studentList.toString());
 					}
+
 				}
 			}
-		} else if (wasd.equalsIgnoreCase("one"))
-
-		{
-			System.out.println("Which quiz score would you like to change?");
-			int i = in.nextInt();
-			for (student students : studentList) {
+		} else if (option == 2) {
+			// System.out.println("Which quiz score would you like to change?");
+			int i = (int) (Math.random() * (5 - 1) + 1);
+			for (studentV4 students : studentList) {
 				if (students.getFullName().equals(name)) {
-					System.out.print("Q" + i + ": \n");
-					int newQuizScore = in.nextInt();
+					// System.out.print("Q" + i + ": \n");
+					int newQuizScore = (int) (Math.random() * 101);
 					students.setQuizScore(i, newQuizScore);
-					// System.out.println(studentList.toString());
 				}
 			}
 		}
 	}
 
-	public static void removeStudentFromArrayList(ArrayList<student> studentList) {
+	public static void replaceStudentInArrayList(ArrayList<studentV4> studentList, String oldfirstName,
+			String oldlastName, String newFirstName, String newLastName) {
+		// Assuming studentV3 is a class with appropriate constructor and methods
+		// Create new student objects with the provided first and last names
+
+		studentV4 newFirstStudent = new studentV4(newFirstName, newLastName);
+		for (int i = 1; i <= 5; i++) {
+			int newQuizScore = (int) (Math.random() * 101);
+			// System.out.print("Q" + i + ": " + newQuizScore + "\n");
+			newFirstStudent.setQuizScore(i, newQuizScore);
+		}
+		// Replace the old student objects in the list with the new ones
+		int index = -1;
+		for (int i = 0; i < studentList.size(); i++) {
+			if (studentList.get(i).getFullName().equals(studentV4.getFullName(oldfirstName, oldlastName))) {
+				index = i;
+				break;
+			}
+		}
+
+		if (index != -1) {
+			studentList.set(index, newFirstStudent);
+		} else {
+			System.out.println("Student not found in the list.");
+		}
+	}
+
+	public static void removeStudentFromArrayList(ArrayList<studentV4> studentList) {
 
 		Scanner in = new Scanner(System.in);
 		System.out.println("Which student would you like to remove?");

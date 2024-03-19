@@ -1,0 +1,11 @@
+Project Title: Catapult & CatapultTester
+Purpose of Project: To calculate the distance of a projectile with different speeds and angles
+Version/Date: 3/10/2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I was able to use 2d Array easly without much trouble
+
+<-s>: While I was doing this I had trouble with the formatting of the table and the formatting of the numbers
+--------------
+In the future: I will be able to format 2D arrays and be able to use 2D array
