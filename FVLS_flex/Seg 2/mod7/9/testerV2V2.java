@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-
 /**
- * Purpose: To list the movies that are saved inside of an arrayList
+ * Purpose: To list the movies that are saved inside of an array
  *
  * @author @Tejas-Upadhyay
  * @version 2/25/2024
@@ -44,26 +42,26 @@ public class testerV2V2 {
         int i, j;
         Movie key;
         if (order == 1) {
-            for (i = 1; i < movieList.size(); i++) {
-                key = movieList.get(i);
+            for (i = 1; i < movieList.length; i++) {
+                key = movieList[i];
                 j = i - 1;
 
-                while (j >= 0 && movieList.get(j).getYear() > key.getYear()) {
-                    movieList.set(j + 1, movieList.get(j));
+                while (j >= 0 && movieList[j].getYear() > key.getYear()) {
+                    movieList[j + 1] = movieList[j];
                     j--;
                 }
-                movieList.set(j + 1, key);
+                movieList[j + 1] = key;
             }
         } else {
-            for (i = 1; i < movieList.size(); i++) {
-                key = movieList.get(i);
+            for (i = 1; i < movieList.length; i++) {
+                key = movieList[i];
                 j = i - 1;
 
-                while (j >= 0 && movieList.get(j).getYear() < key.getYear()) {
-                    movieList.set(j + 1, movieList.get(j));
+                while (j >= 0 && movieList[j].getYear() < key.getYear()) {
+                    movieList[j + 1] = movieList[j];
                     j--;
                 }
-                movieList.set(j + 1, key);
+                movieList[j + 1] = key;
             }
         }
     }
@@ -73,26 +71,26 @@ public class testerV2V2 {
         int i, j;
         Movie key;
         if (order == 1) {
-            for (i = 1; i < movieList.size(); i++) {
-                key = movieList.get(i);
+            for (i = 1; i < movieList.length; i++) {
+                key = movieList[i];
                 j = i - 1;
 
-                while (j >= 0 && movieList.get(j).getTitle().compareTo(key.getTitle()) > 0) {
-                    movieList.set(j + 1, movieList.get(j));
+                while (j >= 0 && movieList[j].getTitle().compareTo(key.getTitle()) > 0) {
+                    movieList[j + 1] = movieList[j];
                     j--;
                 }
-                movieList.set(j + 1, key);
+                movieList[j + 1] = key;
             }
         } else {
-            for (i = 1; i < movieList.size(); i++) {
-                key = movieList.get(i);
+            for (i = 1; i < movieList.length; i++) {
+                key = movieList[i];
                 j = i - 1;
 
-                while (j >= 0 && movieList.get(j).getTitle().compareTo(key.getTitle()) < 0) {
-                    movieList.set(j + 1, movieList.get(j));
+                while (j >= 0 && movieList[j].getTitle().compareTo(key.getTitle()) < 0) {
+                    movieList[j + 1] = movieList[j];
                     j--;
                 }
-                movieList.set(j + 1, key);
+                movieList[j + 1] = key;
             }
         }
     }
@@ -101,26 +99,26 @@ public class testerV2V2 {
         int i, j;
         Movie key;
         if (order == 1) {
-            for (i = 1; i < movieList.size(); i++) {
-                key = movieList.get(i);
+            for (i = 1; i < movieList.length; i++) {
+                key = movieList[i];
                 j = i - 1;
 
-                while (j >= 0 && movieList.get(j).getStudio().compareTo(key.getStudio()) > 0) {
-                    movieList.set(j + 1, movieList.get(j));
+                while (j >= 0 && movieList[j].getStudio().compareTo(key.getStudio()) > 0) {
+                    movieList[j + 1] = movieList[j];
                     j--;
                 }
-                movieList.set(j + 1, key);
+                movieList[j + 1] = key;
             }
         } else {
-            for (i = 1; i < movieList.size(); i++) {
-                key = movieList.get(i);
+            for (i = 1; i < movieList.length; i++) {
+                key = movieList[i];
                 j = i - 1;
 
-                while (j >= 0 && movieList.get(j).getStudio().compareTo(key.getStudio()) < 0) {
-                    movieList.set(j + 1, movieList.get(j));
+                while (j >= 0 && movieList[j].getStudio().compareTo(key.getStudio()) < 0) {
+                    movieList[j + 1] = movieList[j];
                     j--;
                 }
-                movieList.set(j + 1, key);
+                movieList[j + 1] = key;
             }
         }
     }

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * Purpose: To list the moives that are saved inside of a arrayList
  *
