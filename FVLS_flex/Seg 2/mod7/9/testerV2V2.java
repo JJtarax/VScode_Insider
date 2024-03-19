@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Purpose: To list the movies that are saved inside of an arrayList
  *
@@ -8,17 +10,8 @@
 
 public class testerV2V2 {
     public static void main(String[] args) {
-        ArrayList<Movie> movieList = new ArrayList<>();
-        movieList.add(new Movie("Mean Girls", 2024, "Paramount Pictures"));
-        movieList.add(new Movie("The Matrix", 1999, "Warner Bros."));
-        movieList.add(new Movie("The Grinch", 2018, "Universal Pictures"));
-        movieList.add(new Movie("Avengers: Endgame", 2019, "Marvel Studios"));
-        movieList.add(new Movie("The Dark Knight", 2008, "Warner Bros."));
-        movieList.add(new Movie("Meet the Robinsons", 2008, "Disney"));
-        movieList.add(new Movie("Transformers", 2007, "Paramount Pictures"));
-        movieList.add(new Movie("Bumblebee", 2018, "Paramount Pictures"));
-        movieList.add(new Movie("Oppenheimer", 2023, "Universal Pictures"));
-        movieList.add(new Movie("Wonka", 2023, "Warner Bros. Pictures"));
+        Movie[] movieList = new Movie[10];
+        createMoivesIntoList(movieList);
 
         System.out.println("Here is your list");
         printAllMovie(movieList);
@@ -47,92 +40,106 @@ public class testerV2V2 {
         printAllMovie(movieList);
     }
 
-    public static void insertionSortByYear(ArrayList<Movie> source, int order) {
+    public static void insertionSortByYear(Movie[] movieList, int order) {
         int i, j;
         Movie key;
         if (order == 1) {
-            for (i = 1; i < source.size(); i++) {
-                key = source.get(i);
+            for (i = 1; i < movieList.size(); i++) {
+                key = movieList.get(i);
                 j = i - 1;
 
-                while (j >= 0 && source.get(j).getYear() > key.getYear()) {
-                    source.set(j + 1, source.get(j));
+                while (j >= 0 && movieList.get(j).getYear() > key.getYear()) {
+                    movieList.set(j + 1, movieList.get(j));
                     j--;
                 }
-                source.set(j + 1, key);
+                movieList.set(j + 1, key);
             }
         } else {
-            for (i = 1; i < source.size(); i++) {
-                key = source.get(i);
+            for (i = 1; i < movieList.size(); i++) {
+                key = movieList.get(i);
                 j = i - 1;
 
-                while (j >= 0 && source.get(j).getYear() < key.getYear()) {
-                    source.set(j + 1, source.get(j));
+                while (j >= 0 && movieList.get(j).getYear() < key.getYear()) {
+                    movieList.set(j + 1, movieList.get(j));
                     j--;
                 }
-                source.set(j + 1, key);
+                movieList.set(j + 1, key);
             }
         }
     }
 
-    public static void insertionSortByTitle(ArrayList<Movie> source, int order) {
+    public static void insertionSortByTitle(Movie[] movieList, int order) {
 
         int i, j;
         Movie key;
         if (order == 1) {
-            for (i = 1; i < source.size(); i++) {
-                key = source.get(i);
+            for (i = 1; i < movieList.size(); i++) {
+                key = movieList.get(i);
                 j = i - 1;
 
-                while (j >= 0 && source.get(j).getTitle().compareTo(key.getTitle()) > 0) {
-                    source.set(j + 1, source.get(j));
+                while (j >= 0 && movieList.get(j).getTitle().compareTo(key.getTitle()) > 0) {
+                    movieList.set(j + 1, movieList.get(j));
                     j--;
                 }
-                source.set(j + 1, key);
+                movieList.set(j + 1, key);
             }
         } else {
-            for (i = 1; i < source.size(); i++) {
-                key = source.get(i);
+            for (i = 1; i < movieList.size(); i++) {
+                key = movieList.get(i);
                 j = i - 1;
 
-                while (j >= 0 && source.get(j).getTitle().compareTo(key.getTitle()) < 0) {
-                    source.set(j + 1, source.get(j));
+                while (j >= 0 && movieList.get(j).getTitle().compareTo(key.getTitle()) < 0) {
+                    movieList.set(j + 1, movieList.get(j));
                     j--;
                 }
-                source.set(j + 1, key);
+                movieList.set(j + 1, key);
             }
         }
     }
 
-    public static void insertionSortByStudio(ArrayList<Movie> source, int order) {
+    public static void insertionSortByStudio(Movie[] movieList, int order) {
         int i, j;
         Movie key;
         if (order == 1) {
-            for (i = 1; i < source.size(); i++) {
-                key = source.get(i);
+            for (i = 1; i < movieList.size(); i++) {
+                key = movieList.get(i);
                 j = i - 1;
 
-                while (j >= 0 && source.get(j).getStudio().compareTo(key.getStudio()) > 0) {
-                    source.set(j + 1, source.get(j));
+                while (j >= 0 && movieList.get(j).getStudio().compareTo(key.getStudio()) > 0) {
+                    movieList.set(j + 1, movieList.get(j));
                     j--;
                 }
-                source.set(j + 1, key);
+                movieList.set(j + 1, key);
             }
         } else {
-            for (i = 1; i < source.size(); i++) {
-                key = source.get(i);
+            for (i = 1; i < movieList.size(); i++) {
+                key = movieList.get(i);
                 j = i - 1;
 
-                while (j >= 0 && source.get(j).getStudio().compareTo(key.getStudio()) < 0) {
-                    source.set(j + 1, source.get(j));
+                while (j >= 0 && movieList.get(j).getStudio().compareTo(key.getStudio()) < 0) {
+                    movieList.set(j + 1, movieList.get(j));
                     j--;
                 }
-                source.set(j + 1, key);
+                movieList.set(j + 1, key);
             }
         }
     }
 
-    public static void printAllMovie(ArrayList<Movie> movieList) {
+    public static void createMoivesIntoList(Movie[] movieList) {
+        movieList[0] = new Movie("Seven Nation Army", 2003, "The White Stripes");
+        movieList[1] = new Movie("Beggin'", 2007, "Madcon");
+        movieList[2] = new Movie("Alors on danse", 2009, "Stromae");
+        movieList[3] = new Movie("Paint it, Black", 1966, "The Rolling Stones");
+        movieList[4] = new Movie("Fairy Tale", 2009, "Alexander Rybak");
+        movieList[5] = new Movie("Rasputin", 1978, "Boney M.");
+        movieList[6] = new Movie("bad guy", 2019, "Billie Eilish");
+        movieList[7] = new Movie("Skyfall", 2012, "Adele");
+        movieList[8] = new Movie("Human", 2016, "Rag'n'Bone Man");
+        movieList[9] = new Movie("Careless Whisper", 1984, "George Michael");
+
+    }
+
+    public static void printAllMovie(Movie[] movieList) {
         for (Movie movie : movieList) {
             System.out.println(movie.toString());
         }
