@@ -1,0 +1,11 @@
+Project Title: Polymoephism
+Purpose of Project: To print the values of a polygon that has been provided.
+Version/Date: 3/23/2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I was able to get more expirnce for extend
+
+<-s>: I didn't come across anything that was hard
+--------------
+In the future: I will be able to use extend
