@@ -1,5 +1,5 @@
 /**
- * This file prints all the terrains.
+ * This class defines a basic Terrain.
  *
  * @author Tejas Upadhyay
  * @version 3/19/2024

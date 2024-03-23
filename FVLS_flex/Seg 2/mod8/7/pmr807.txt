@@ -1,0 +1,11 @@
+Project Title: 08.07 Computer Science Lab: Picture 
+Purpose of Project: To be able to change the color of pixels and mirror an image.
+Version/Date: 3/19/2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I learned how to flip images and change the color of pixels
+
+<-s>: Had some trouble with the underWaterFix.
+--------------
+In the future: I will be able to mirror and change the coloring of a picture

@@ -1,11 +1,11 @@
-Project Title: 
-Purpose of Project: 
-Version/Date: 
+Project Title: Part A & Part B
+Purpose of Project: To make a 2d array that has numbers and another file that will find all the odd number within the 2d array and add those numbers into a arrayList
+Version/Date: 3/19/2024
 Author: Tejas Upadhyay
 ----
 PMR:
-<+s>: 
+<+s>: I was able to do this without outside help
 
-<-s>: 
+<-s>: I took sometime to figure out how to make it
 --------------
-In the future: 
+In the future: I will be bale to make code like this easly

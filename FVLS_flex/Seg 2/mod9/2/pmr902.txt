@@ -1,0 +1,11 @@
+Project Title: Game Terrin
+Purpose of Project: To show the amount of pixels each Terrain takes and if they have something special about that Terrain.
+Version/Date: 3/19/2024
+Author: Tejas Upadhyay
+----
+PMR:
+<+s>: I was able to learn about super and sub class (and the usage of extend)
+
+<-s>: Took sometime in understand and choosing what should what 2 terrians shoudld i add
+--------------
+In the future: I will be able to use extend

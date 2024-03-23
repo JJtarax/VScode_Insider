@@ -4,7 +4,7 @@
  * Version/Date: 3/10/2024
  * Author: Tejas Upadhyay
  */
-public class contactTesterV2 {
+public class contactTesterV3 {
     public static void main(String[] args) {
 
         Contacts[] contactArray = new Contacts[10];

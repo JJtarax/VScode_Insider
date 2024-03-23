@@ -4,11 +4,8 @@
  * Version/Date: 3/10/2024
  * Author: Tejas Upadhyay
  */
-import java.util.*;
-
-public class contactTesterV2 {
+public class contactTesterV3 {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
 
         Contacts[] contactArray = new Contacts[10];
         combineContactsIntoList(contactArray);
@@ -22,33 +19,49 @@ public class contactTesterV2 {
         System.out.println("3. Birth Month");
         System.out.println("4. Phone Number");
         System.out.println("5. Email");
-        int choice = in.nextInt();
+        System.out.println();
 
-        if (choice == 1) {
-            System.out.println("What name do you want to search for?");
-            in.nextLine();
-            String Name = in.nextLine();
-            sortByContactsName(contactArray);
-            binarySearchByName(contactArray, Name);
-        } else if (choice == 2) {
-            System.out.println("What relation do you want to search for?");
-            String Relation = in.next();
-            sortByRelation(contactArray);
-            binarySearchByRelation(contactArray, Relation);
-        } else if (choice == 3) {
-            System.out.println("What birth month do you want to search for?");
-            String month = in.next();
-            sequentialSearchByBirthday(contactArray, month);
-        } else if (choice == 4) {
-            System.out.println("What phone number do you want to search for?");
-            String PhoneNumber = in.next();
-            sequentialSearchByPhoneNumber(contactArray, PhoneNumber);
-        } else if (choice == 5) {
-            System.out.println("What email do you want to search for?");
-            String Email = in.next();
-            sequentialSearchByEmail(contactArray, Email);
+        for (int i = 0; i < 6; i++) {
+
+            if (i == 1) {
+                System.out.println("What name do you want to search for?");
+                String Name = "Tony Stark";
+                System.out.println(Name);
+                sortByContactsName(contactArray);
+                binarySearchByName(contactArray, Name);
+                System.out.println();
+
+            } else if (i == 2) {
+                System.out.println("What relation do you want to search for?");
+                String Relation = "Sister";
+                System.out.println(Relation);
+                sortByRelation(contactArray);
+                binarySearchByRelation(contactArray, Relation);
+                System.out.println();
+
+            } else if (i == 3) {
+                System.out.println("What birth month do you want to search for?");
+                String month = "October";
+                System.out.println(month);
+                sequentialSearchByBirthday(contactArray, month);
+                System.out.println();
+
+            } else if (i == 4) {
+                System.out.println("What phone number do you want to search for?");
+                String PhoneNumber = "1234567890";
+                System.out.println(PhoneNumber);
+                sequentialSearchByPhoneNumber(contactArray, PhoneNumber);
+                System.out.println();
+
+            } else if (i == 5) {
+                System.out.println("What email do you want to search for?");
+                String Email = "peter@webs.com";
+                System.out.println(Email);
+                sequentialSearchByEmail(contactArray, Email);
+                System.out.println();
+
+            }
         }
-        in.close();
 
     }
 

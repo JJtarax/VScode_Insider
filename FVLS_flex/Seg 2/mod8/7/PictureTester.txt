@@ -1,0 +1,182 @@
+/*
+ * Purpose: To edit the pixels of an image
+ * 
+ * Tejas Upadhyay
+ * 3/19/2024
+*/
+
+/**
+ * This class contains class (static) methods
+ * that will help you test the Picture class
+ * methods. Uncomment the methods and the code
+ * in the main to test.
+ * 
+ * @author Barbara Ericson
+ */
+public class PictureTester {
+  /** Method to test zeroBlue - Activity 5 */
+  public static void testZeroBlue() {
+    Picture beach = new Picture("pixLab/images/beach.jpg");
+    beach.explore();
+    beach.zeroBlue();
+    beach.explore();
+  }
+
+  /** Method to test mirrorVertical */
+  public static void testMirrorVertical() {
+    Picture caterpillar = new Picture("pixLab/images/caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorVertical();
+    caterpillar.explore();
+  }
+
+  public static void testMirrorVerticalRightToLeft() {
+    Picture caterpillar = new Picture("pixLab/images/caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorVerticalRightToLeft();
+    caterpillar.explore();
+  }
+
+  public static void testMirrorHorizontal() {
+    Picture caterpillar = new Picture("pixLab/images/caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorHorizontal();
+    caterpillar.explore();
+  }
+
+  public static void testMirrorHorizontalBotToTop() {
+    Picture caterpillar = new Picture("pixLab/images/caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorHorizontalBotToTop();
+    caterpillar.explore();
+  }
+
+  /** Method to test mirrorTemple */
+  public static void testMirrorTemple() {
+    Picture temple = new Picture("pixLab/images/temple.jpg");
+    temple.explore();
+    temple.mirrorTemple();
+    temple.explore();
+  }
+
+  public static void testMirrorArms() {
+    Picture temple = new Picture("pixLab/images/snowman.jpg");
+    temple.explore();
+    temple.mirrorArms();
+    temple.explore();
+  }
+
+  public static void testMirrorGull() {
+    Picture temple = new Picture("pixLab/images/seagull.jpg");
+    temple.explore();
+    temple.mirrorGull();
+    temple.explore();
+  }
+
+  /** Method to test the collage method */
+  public static void testCollage() {
+    Picture canvas = new Picture("pixLab/images/640x480.jpg");
+    canvas.createCollage();
+    canvas.explore();
+  }
+
+  /** Method to test edgeDetection */
+  public static void testEdgeDetection() {
+    Picture swan = new Picture("pixLab/images/swan.jpg");
+    swan.edgeDetection(10);
+    swan.explore();
+  }
+
+  public static void testKeepOnlyBlue() {
+    Picture beach = new Picture("pixLab/images/beach.jpg");
+    beach.explore();
+    beach.KeepOnlyBlue();
+    beach.explore();
+  }
+
+  public static void testKeepOnlyRed() {
+    Picture beach = new Picture("pixLab/images/beach.jpg");
+    beach.explore();
+    beach.KeepOnlyRed();
+    beach.explore();
+  }
+
+  public static void testKeepOnlyGreen() {
+    Picture beach = new Picture("pixLab/images/beach.jpg");
+    beach.explore();
+    beach.KeepOnlyGreen();
+    beach.explore();
+  }
+
+  public static void testNegate() {
+    Picture beach = new Picture("pixLab/images/beach.jpg");
+    beach.explore();
+    beach.nagate();
+    beach.explore();
+  }
+
+  public static void testGrayscale() {
+    Picture beach = new Picture("pixLab/images/beach.jpg");
+    beach.explore();
+    beach.grayscale();
+    beach.explore();
+  }
+
+  public static void testFixUnderwater() {
+    Picture water = new Picture("pixLab/images/water.jpg");
+    water.explore();
+    water.fixUnderWater();
+    water.explore();
+  }
+
+  /**
+   * Main method for testing. Every class can have a main
+   * method in Java
+   */
+  public static void main(String[] args) {
+    // uncomment a call here to run a test and
+    // comment out the ones you don't want to run
+
+    // Activity 5
+    // testZeroBlue();
+    // testKeepOnlyBlue();
+    // testKeepOnlyRed();
+    // testKeepOnlyGreen();
+    // testNegate();
+    // testGrayscale();
+
+    // Activity 5 Challenge - optional
+    // testFixUnderwater();
+
+    // Activity 6
+    // testMirrorVertical();
+    // testMirrorVerticalRightToLeft();
+    // testMirrorHorizontal();
+    // testMirrorHorizontalBotToTop();
+
+    // Activity 6 Challenge - optional
+    // testMirrorDiagonal();
+
+    // Activity 7
+    // testMirrorTemple();
+    // testMirrorArms();
+    // testMirrorGull();
+
+    // Activity 8
+    // testCollage();
+    // testCopy();
+    // testMyCollage();
+
+    // Activity 9
+    // testEdgeDetection();
+    // testEdgeDetection2();
+
+    // Extra methods
+    // testChromakey();
+    // testEncodeAndDecode();
+    // testGetCountRedOverValue(250);
+    // testSetRedToHalfValueInTopHalf();
+    // testClearBlueOverValue(200);
+    // testGetAverageForColumn(0);
+  }
+}

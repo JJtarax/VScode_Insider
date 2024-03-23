@@ -5,7 +5,7 @@
  * @version 2/25/2024
  *
  */
-public class testerVV2 {
+public class testerVV3 {
     public static void main(String[] args) {
         // Moive List
         Movie[] movieList = new Movie[10];

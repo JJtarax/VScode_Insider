@@ -6,7 +6,7 @@
  *
  */
 
-public class testerV2V2 {
+public class testerV2V3 {
     public static void main(String[] args) {
         Movie[] movieList = new Movie[10];
         createMoivesIntoList(movieList);
