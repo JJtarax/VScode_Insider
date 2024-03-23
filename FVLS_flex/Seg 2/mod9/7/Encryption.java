@@ -19,26 +19,21 @@ public class Encryption {
         return alphabet;
     }
 
-    public static void encrypting(String w) {
-        String x = "";
-        for (int i = 0; i < w.length(); i++) {
-            String r = w.substring(i, i + 1);
+    public static void encrypting(String message) {
+        String encryptedMessage = "";
+        for (int i = 0; i < message.length(); i++) {
+            String r = message.substring(i, i + 1);
 
-            for (int j = 0; j < generateCipherAlphabet().length(); j++) {
-                Boolean p = r.equalsIgnoreCase(alphabet.substring(j, j + 1));
-                if (r.equals(" ")) {
-                    break;
-                }
-                if (p) {
-                    x += generateCipherAlphabet().substring(j, j + 1);
-                    break;
-                }
-            }
+            String cipherbet = generateCipherAlphabet();
+
+            String foundChar = cipherbet.substring(alphabet.indexOf(r), alphabet.indexOf(r) + 1);
+
             if (r.equals(" ")) {
-                x += " ";
-            } else if (r.equals("")) {
+                encryptedMessage += " ";
+            } else {
+                encryptedMessage += foundChar;
             }
         }
-        System.out.print(x);
+        System.out.print(encryptedMessage);
     }
 }

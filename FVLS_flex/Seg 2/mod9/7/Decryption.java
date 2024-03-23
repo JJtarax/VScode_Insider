@@ -19,26 +19,21 @@ public class Decryption {
         return alphabet;
     }
 
-    public static void decrypting(String w) {
-        String x = "";
-        for (int i = 0; i < w.length(); i++) {
-            String r = w.substring(i, i + 1);
+    public static void decrypting(String message) {
+        String decryptedMessage = "";
+        for (int i = 0; i < message.length(); i++) {
+            String r = message.substring(i, i + 1);
 
-            for (int j = 0; j < alphabet.length(); j++) {
-                Boolean p = r.equalsIgnoreCase(generateCipherAlphabet().substring(j, j + 1));
-                if (r.equals(" ")) {
-                    break;
-                }
-                if (p) {
-                    x += alphabet.substring(j, j + 1);
-                    break;
-                }
-            }
+            String cipherbet = generateCipherAlphabet();
+
+            String foundChar = alphabet.substring(cipherbet.indexOf(r), cipherbet.indexOf(r) + 1);
+
             if (r.equals(" ")) {
-                x += " ";
-            } else if (r.equals("")) {
+                decryptedMessage += " ";
+            } else {
+                decryptedMessage += foundChar;
             }
-            System.out.print(x);
         }
+        System.out.println(decryptedMessage);
     }
 }
