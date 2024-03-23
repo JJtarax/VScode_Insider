@@ -13,6 +13,7 @@ public class CaesarTester {
         }
 
         Encryption.setShiftValue(input);
+        Decryption.setShiftValue(input);
 
         // System.out.println(Encryption.getAlphabet());
         // System.out.println(Encryption.generateCipherAlphabet());
@@ -43,6 +44,7 @@ public class CaesarTester {
             }
 
             System.out.print("""
+
                     Do you want to encrypt or decrypt?
 
                     1 : Encrypt
