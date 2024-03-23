@@ -1,11 +1,11 @@
-Project Title: 
-Purpose of Project: 
-Version/Date: 
+Project Title: Overriding Methods
+Purpose of Project: To show that I know how to override a method
+Version/Date:3/23/2024
 Author: Tejas Upadhyay
 ----
 PMR:
-<+s>: 
+<+s>: learned to override methods
 
-<-s>: 
+<-s>: Had a little tourble figuring out how to override .equals() but got it in the end
 --------------
-In the future: 
+In the future: I will be able to override methods
